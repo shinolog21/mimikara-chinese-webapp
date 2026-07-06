@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>耳から中国語|単語道場</title>
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="単語道場">
+<meta name="theme-color" content="#F2F2EA">
+<link rel="apple-touch-icon" sizes="180x180" href="data:image/png;base64,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">
+<link rel="icon" type="image/png" sizes="192x192" href="data:image/png;base64,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">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@600;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Noto+Serif+SC:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#F2F2EA;--card:#FBFAF3;--ink:#20241F;--ink2:#5F6458;--line:#DBDACB;--blue:#2C4A9A;--blue-deep:#22376E;--blue-soft:#E7EBF6;--red:#BE3A1D;--red-soft:#F6E7E1;--green:#3F7A50;--green-soft:#E5EFE7;--mask:#E9E8DB;--radius:14px}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{font-family:'Zen Kaku Gothic New',system-ui,sans-serif;background:var(--paper);color:var(--ink);line-height:1.65}
+.zh{font-family:'Noto Serif SC','Shippori Mincho B1',serif}
+header{position:sticky;top:0;z-index:20;background:var(--paper);border-bottom:1px solid var(--line);padding:calc(10px + env(safe-area-inset-top)) 16px 8px;display:flex;align-items:center;justify-content:space-between;gap:8px}
+.hd-title{font-family:'Shippori Mincho B1',serif;font-weight:800;font-size:1.12rem;letter-spacing:.04em}
+.hd-title .accent{color:var(--red)}
+.hd-sub{font-size:.66rem;color:var(--ink2);letter-spacing:.06em}
+.rate-wrap{display:flex;align-items:center;gap:6px}
+.rate-wrap label{font-size:.68rem;color:var(--ink2)}
+select,input[type=text]{font-family:inherit;font-size:.86rem;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:8px;padding:7px 9px}
+textarea{font-family:inherit;font-size:.9rem;color:var(--ink);background:#FDFCF7;border:1.5px solid var(--line);border-radius:10px;padding:10px 12px;width:100%;min-height:80px;resize:vertical;line-height:1.7}
+textarea:focus,input:focus{border-color:var(--blue);outline:none}
+main{max-width:640px;margin:0 auto;padding:16px 16px 60px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:16px;margin-bottom:14px}
+.card h2{font-family:'Shippori Mincho B1',serif;font-weight:800;font-size:1rem;letter-spacing:.03em;margin-bottom:8px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.card h2 .tag{font-weight:700;font-size:.62rem;color:var(--blue);background:var(--blue-soft);border-radius:999px;padding:2px 8px;font-family:'Zen Kaku Gothic New',sans-serif}
+.muted{color:var(--ink2);font-size:.8rem}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+button:focus-visible,select:focus-visible,input:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;background:var(--blue);color:#fff;font-weight:700;font-size:.9rem;border-radius:12px;padding:12px 18px}
+.btn:active{background:var(--blue-deep)}
+.btn.ghost{background:var(--card);color:var(--blue);border:1.5px solid var(--blue)}
+.btn.quiet{background:var(--card);color:var(--ink2);border:1px solid var(--line);font-weight:500}
+.btn.red{background:var(--red)}
+.btn.wide{width:100%}
+.btn.sm{padding:7px 12px;font-size:.78rem;border-radius:9px}
+.btn:disabled{opacity:.4;cursor:default}
+.icon-play{width:0;height:0;border-left:9px solid currentColor;border-top:6px solid transparent;border-bottom:6px solid transparent;display:inline-block}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.row.center{justify-content:center}
+.row.between{justify-content:space-between}
+.mt8{margin-top:8px}.mt12{margin-top:12px}
+.seg{display:flex;background:var(--mask);border-radius:12px;padding:3px;margin-bottom:14px}
+.seg button{flex:1;padding:9px 4px;border-radius:9px;font-size:.82rem;font-weight:700;color:var(--ink2)}
+.seg button.on{background:var(--card);color:var(--blue);box-shadow:0 1px 3px rgba(32,36,31,.12)}
+.stats{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:14px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 6px;text-align:center}
+.stat .n{font-family:'Shippori Mincho B1',serif;font-weight:800;font-size:1.35rem;color:var(--blue)}
+.stat.due .n{color:var(--red)}
+.stat .l{font-size:.64rem;color:var(--ink2);font-weight:700}
+.tzg-wrap{display:flex;justify-content:center;margin:8px 0 4px}
+.tzg{position:relative;width:min(60vw,220px);height:min(60vw,220px);border:2px solid var(--ink);border-radius:6px;background:#FDFCF7;display:flex;align-items:center;justify-content:center;text-align:center;padding:10px}
+.tzg::before,.tzg::after{content:'';position:absolute;pointer-events:none}
+.tzg::before{left:0;right:0;top:50%;border-top:1.5px dashed #D8D6C2}
+.tzg::after{top:0;bottom:0;left:50%;border-left:1.5px dashed #D8D6C2}
+.tzg .big{position:relative;z-index:1;font-size:clamp(36px,11vw,58px);font-weight:700;line-height:1.25}
+.tzg .front-ja{position:relative;z-index:1;font-size:1.02rem;font-weight:700;line-height:1.5}
+.tzg .hidden-mark{position:relative;z-index:1;font-size:2rem;color:#C9C7B4;font-family:'Shippori Mincho B1',serif}
+.pinyin{color:var(--blue);font-weight:500;font-size:1rem}
+.meaning{font-size:.92rem;font-weight:700}
+.card-answer{text-align:center;min-height:56px;margin-top:6px}
+.rate4{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;margin-top:12px}
+.rate4 button{border-radius:11px;padding:10px 2px;font-weight:700;font-size:.8rem;border:1.5px solid var(--line);background:var(--card);display:flex;flex-direction:column;gap:1px;align-items:center}
+.rate4 .iv{font-size:.62rem;font-weight:500;color:var(--ink2)}
+.rate4 .r-again{color:var(--red);border-color:var(--red)}
+.rate4 .r-easy{color:var(--green);border-color:var(--green)}
+.rate4 .r-good{color:var(--blue);border-color:var(--blue)}
+.badge{font-size:.64rem;font-weight:700;border-radius:999px;padding:2px 9px}
+.b-new{color:var(--green);background:var(--green-soft)}
+.b-rev{color:var(--blue);background:var(--blue-soft)}
+.b-store{color:var(--ink2);background:var(--mask)}
+.progress{font-size:.74rem;color:var(--ink2);text-align:center;margin-top:8px;letter-spacing:.06em}
+.done{background:linear-gradient(160deg,#FBFAF3 60%,#EFF1E9);border:1px solid var(--line);border-radius:var(--radius);padding:26px 18px;text-align:center}
+.done .zh-big{font-family:'Noto Serif SC',serif;font-size:2rem;font-weight:700;color:var(--blue)}
+.list-item{display:flex;gap:10px;align-items:center;padding:9px 0;border-top:1px dashed var(--line);font-size:.88rem}
+.list-item:first-of-type{border-top:none}
+.list-item .h{font-weight:700;min-width:70px}
+.list-item .p{color:var(--blue);font-size:.78rem;min-width:86px}
+.list-item .m{color:var(--ink2);font-size:.8rem;flex:1}
+.note{font-size:.74rem;color:var(--ink2);background:var(--mask);border-radius:10px;padding:9px 12px;margin-top:10px}
+.err-box{background:var(--red-soft);border:1px solid var(--red);color:var(--red);border-radius:10px;padding:10px 14px;font-size:.8rem;font-weight:700;margin-top:10px}
+.diff{font-size:1.7rem;font-weight:700;line-height:1.7;text-align:center;letter-spacing:.06em}
+.diff .ok{color:var(--green)}
+.diff .ng{color:var(--red);background:var(--red-soft);border-radius:5px}
+.scoreline{text-align:center;font-weight:800;font-family:'Shippori Mincho B1',serif;font-size:1.2rem;margin-top:8px}
+.heard{text-align:center;font-size:.92rem;color:var(--ink2);margin-top:6px}
+.rec-btn{width:88px;height:88px;border-radius:50%;background:var(--red);color:#fff;font-weight:800;font-size:.86rem;display:flex;align-items:center;justify-content:center;margin:14px auto 4px;box-shadow:0 3px 10px rgba(190,58,29,.3)}
+.rec-btn.listening{background:var(--ink);animation:pulse 1.2s ease infinite}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.06)}}
+@media (prefers-reduced-motion:reduce){.rec-btn.listening{animation:none}}
+</style>
+</head>
+<body>
+<header>
+  <div>
+    <div class="hd-title">単語<span class="accent">道場</span></div>
+    <div class="hd-sub">SRS単語帳+発音チェック</div>
+  </div>
+  <div class="rate-wrap"><label for="rate">速度</label>
+    <select id="rate"><option value="0.7">0.7x</option><option value="0.85" selected>0.85x</option><option value="1">1.0x</option><option value="1.15">1.15x</option></select>
+  </div>
+</header>
+<main>
+<div class="seg" id="mainSeg">
+  <button data-p="rev" class="on">復習</button>
+  <button data-p="manage">単語管理</button>
+  <button data-p="pron">発音チェック</button>
+</div>
+<div id="tab-rev"></div>
+<div id="tab-manage"></div>
+<div id="tab-pron"></div>
+</main>
+<script>
+const SEED_APP=[
+{id:'v001',h:'你好',p:'nǐ hǎo',m:'こんにちは',t:'あいさつ・基本表現'},
+{id:'v002',h:'早上好',p:'zǎoshang hǎo',m:'おはよう',t:'あいさつ・基本表現'},
+{id:'v003',h:'谢谢',p:'xièxie',m:'ありがとう',t:'あいさつ・基本表現'},
+{id:'v004',h:'不客气',p:'bú kèqi',m:'どういたしまして',t:'あいさつ・基本表現'},
+{id:'v005',h:'对不起',p:'duìbuqǐ',m:'ごめんなさい',t:'あいさつ・基本表現'},
+{id:'v006',h:'没关系',p:'méi guānxi',m:'大丈夫・気にしないで',t:'あいさつ・基本表現'},
+{id:'v007',h:'请',p:'qǐng',m:'どうぞ・〜してください',t:'あいさつ・基本表現'},
+{id:'v008',h:'麻烦你了',p:'máfan nǐ le',m:'お手数をおかけします',t:'あいさつ・基本表現'},
+{id:'v009',h:'辛苦了',p:'xīnkǔ le',m:'お疲れさま',t:'あいさつ・基本表現'},
+{id:'v010',h:'再见',p:'zàijiàn',m:'さようなら',t:'あいさつ・基本表現'},
+{id:'v011',h:'明天见',p:'míngtiān jiàn',m:'また明日',t:'あいさつ・基本表現'},
+{id:'v012',h:'好的',p:'hǎo de',m:'わかりました・OK',t:'あいさつ・基本表現'},
+{id:'v013',h:'没问题',p:'méi wèntí',m:'問題ない',t:'あいさつ・基本表現'},
+{id:'v014',h:'当然',p:'dāngrán',m:'もちろん',t:'あいさつ・基本表現'},
+{id:'v015',h:'可能',p:'kěnéng',m:'たぶん・かもしれない',t:'あいさつ・基本表現'},
+{id:'v016',h:'一定',p:'yídìng',m:'きっと・必ず',t:'あいさつ・基本表現'},
+{id:'v017',h:'真的吗',p:'zhēn de ma',m:'本当に?',t:'あいさつ・基本表現'},
+{id:'v018',h:'怎么了',p:'zěnme le',m:'どうしたの?',t:'あいさつ・基本表現'},
+{id:'v019',h:'为什么',p:'wèishénme',m:'なぜ',t:'あいさつ・基本表現'},
+{id:'v020',h:'什么',p:'shénme',m:'何',t:'あいさつ・基本表現'},
+{id:'v021',h:'谁',p:'shéi',m:'誰',t:'あいさつ・基本表現'},
+{id:'v022',h:'哪里',p:'nǎlǐ',m:'どこ',t:'あいさつ・基本表現'},
+{id:'v023',h:'什么时候',p:'shénme shíhou',m:'いつ',t:'あいさつ・基本表現'},
+{id:'v024',h:'怎么',p:'zěnme',m:'どうやって',t:'あいさつ・基本表現'},
+{id:'v025',h:'多少',p:'duōshao',m:'どのくらい・いくつ',t:'あいさつ・基本表現'},
+{id:'v026',h:'零',p:'líng',m:'ゼロ',t:'数字・時間'},
+{id:'v027',h:'百',p:'bǎi',m:'百',t:'数字・時間'},
+{id:'v028',h:'千',p:'qiān',m:'千',t:'数字・時間'},
+{id:'v029',h:'万',p:'wàn',m:'万',t:'数字・時間'},
+{id:'v030',h:'星期一',p:'xīngqīyī',m:'月曜日',t:'数字・時間'},
+{id:'v031',h:'星期天',p:'xīngqītiān',m:'日曜日',t:'数字・時間'},
+{id:'v032',h:'今天',p:'jīntiān',m:'今日',t:'数字・時間'},
+{id:'v033',h:'昨天',p:'zuótiān',m:'昨日',t:'数字・時間'},
+{id:'v034',h:'明天',p:'míngtiān',m:'明日',t:'数字・時間'},
+{id:'v035',h:'现在',p:'xiànzài',m:'いま',t:'数字・時間'},
+{id:'v036',h:'上午',p:'shàngwǔ',m:'午前',t:'数字・時間'},
+{id:'v037',h:'下午',p:'xiàwǔ',m:'午後',t:'数字・時間'},
+{id:'v038',h:'晚上',p:'wǎnshang',m:'夜',t:'数字・時間'},
+{id:'v039',h:'点',p:'diǎn',m:'〜時',t:'数字・時間'},
+{id:'v040',h:'分钟',p:'fēnzhōng',m:'〜分間',t:'数字・時間'},
+{id:'v041',h:'小时',p:'xiǎoshí',m:'〜時間',t:'数字・時間'},
+{id:'v042',h:'天',p:'tiān',m:'日',t:'数字・時間'},
+{id:'v043',h:'月',p:'yuè',m:'月',t:'数字・時間'},
+{id:'v044',h:'年',p:'nián',m:'年',t:'数字・時間'},
+{id:'v045',h:'周末',p:'zhōumò',m:'週末',t:'数字・時間'},
+{id:'v046',h:'以前',p:'yǐqián',m:'以前',t:'数字・時間'},
+{id:'v047',h:'以后',p:'yǐhòu',m:'これから・以後',t:'数字・時間'},
+{id:'v048',h:'马上',p:'mǎshàng',m:'すぐに',t:'数字・時間'},
+{id:'v049',h:'刚才',p:'gāngcái',m:'さっき',t:'数字・時間'},
+{id:'v050',h:'最近',p:'zuìjìn',m:'最近',t:'数字・時間'},
+{id:'v051',h:'是',p:'shì',m:'〜である',t:'動詞コア25'},
+{id:'v052',h:'有',p:'yǒu',m:'ある・持っている',t:'動詞コア25'},
+{id:'v053',h:'在',p:'zài',m:'〜にいる・ある',t:'動詞コア25'},
+{id:'v054',h:'去',p:'qù',m:'行く',t:'動詞コア25'},
+{id:'v055',h:'来',p:'lái',m:'来る',t:'動詞コア25'},
+{id:'v056',h:'回',p:'huí',m:'帰る・戻る',t:'動詞コア25'},
+{id:'v057',h:'吃',p:'chī',m:'食べる',t:'動詞コア25'},
+{id:'v058',h:'喝',p:'hē',m:'飲む',t:'動詞コア25'},
+{id:'v059',h:'看',p:'kàn',m:'見る・読む',t:'動詞コア25'},
+{id:'v060',h:'听',p:'tīng',m:'聞く',t:'動詞コア25'},
+{id:'v061',h:'说',p:'shuō',m:'話す・言う',t:'動詞コア25'},
+{id:'v062',h:'读',p:'dú',m:'読む・音読する',t:'動詞コア25'},
+{id:'v063',h:'写',p:'xiě',m:'書く',t:'動詞コア25'},
+{id:'v064',h:'买',p:'mǎi',m:'買う',t:'動詞コア25'},
+{id:'v065',h:'卖',p:'mài',m:'売る',t:'動詞コア25'},
+{id:'v066',h:'做',p:'zuò',m:'する・作る',t:'動詞コア25'},
+{id:'v067',h:'想',p:'xiǎng',m:'〜したい・思う',t:'動詞コア25'},
+{id:'v068',h:'要',p:'yào',m:'欲しい・〜するつもり',t:'動詞コア25'},
+{id:'v069',h:'会',p:'huì',m:'できる(習得して)',t:'動詞コア25'},
+{id:'v070',h:'能',p:'néng',m:'できる(条件的に)',t:'動詞コア25'},
+{id:'v071',h:'可以',p:'kěyǐ',m:'してもよい',t:'動詞コア25'},
+{id:'v072',h:'知道',p:'zhīdào',m:'知っている',t:'動詞コア25'},
+{id:'v073',h:'觉得',p:'juéde',m:'〜と思う・感じる',t:'動詞コア25'},
+{id:'v074',h:'喜欢',p:'xǐhuan',m:'好き',t:'動詞コア25'},
+{id:'v075',h:'给',p:'gěi',m:'あげる・〜に',t:'動詞コア25'},
+{id:'v076',h:'好',p:'hǎo',m:'良い',t:'形容詞・副詞'},
+{id:'v077',h:'大',p:'dà',m:'大きい',t:'形容詞・副詞'},
+{id:'v078',h:'小',p:'xiǎo',m:'小さい',t:'形容詞・副詞'},
+{id:'v079',h:'多',p:'duō',m:'多い',t:'形容詞・副詞'},
+{id:'v080',h:'少',p:'shǎo',m:'少ない',t:'形容詞・副詞'},
+{id:'v081',h:'快',p:'kuài',m:'速い',t:'形容詞・副詞'},
+{id:'v082',h:'慢',p:'màn',m:'遅い',t:'形容詞・副詞'},
+{id:'v083',h:'贵',p:'guì',m:'(値段が)高い',t:'形容詞・副詞'},
+{id:'v084',h:'便宜',p:'piányi',m:'安い',t:'形容詞・副詞'},
+{id:'v085',h:'新',p:'xīn',m:'新しい',t:'形容詞・副詞'},
+{id:'v086',h:'忙',p:'máng',m:'忙しい',t:'形容詞・副詞'},
+{id:'v087',h:'累',p:'lèi',m:'疲れた',t:'形容詞・副詞'},
+{id:'v088',h:'高兴',p:'gāoxìng',m:'うれしい',t:'形容詞・副詞'},
+{id:'v089',h:'难',p:'nán',m:'難しい',t:'形容詞・副詞'},
+{id:'v090',h:'容易',p:'róngyì',m:'簡単',t:'形容詞・副詞'},
+{id:'v091',h:'重要',p:'zhòngyào',m:'重要',t:'形容詞・副詞'},
+{id:'v092',h:'方便',p:'fāngbiàn',m:'便利',t:'形容詞・副詞'},
+{id:'v093',h:'有意思',p:'yǒu yìsi',m:'面白い',t:'形容詞・副詞'},
+{id:'v094',h:'很',p:'hěn',m:'とても',t:'形容詞・副詞'},
+{id:'v095',h:'太',p:'tài',m:'〜すぎる',t:'形容詞・副詞'},
+{id:'v096',h:'非常',p:'fēicháng',m:'非常に',t:'形容詞・副詞'},
+{id:'v097',h:'真',p:'zhēn',m:'本当に',t:'形容詞・副詞'},
+{id:'v098',h:'都',p:'dōu',m:'みんな・すべて',t:'形容詞・副詞'},
+{id:'v099',h:'也',p:'yě',m:'〜も',t:'形容詞・副詞'},
+{id:'v100',h:'还',p:'hái',m:'まだ・さらに',t:'形容詞・副詞'},
+{id:'v101',h:'吃饭',p:'chīfàn',m:'食事する',t:'食事・買い物'},
+{id:'v102',h:'米饭',p:'mǐfàn',m:'ご飯',t:'食事・買い物'},
+{id:'v103',h:'面条',p:'miàntiáo',m:'麺',t:'食事・買い物'},
+{id:'v104',h:'菜',p:'cài',m:'料理・野菜',t:'食事・買い物'},
+{id:'v105',h:'肉',p:'ròu',m:'肉',t:'食事・買い物'},
+{id:'v106',h:'鱼',p:'yú',m:'魚',t:'食事・買い物'},
+{id:'v107',h:'水',p:'shuǐ',m:'水',t:'食事・買い物'},
+{id:'v108',h:'茶',p:'chá',m:'お茶',t:'食事・買い物'},
+{id:'v109',h:'咖啡',p:'kāfēi',m:'コーヒー',t:'食事・買い物'},
+{id:'v110',h:'啤酒',p:'píjiǔ',m:'ビール',t:'食事・買い物'},
+{id:'v111',h:'好吃',p:'hǎochī',m:'おいしい(食べ物)',t:'食事・買い物'},
+{id:'v112',h:'好喝',p:'hǎohē',m:'おいしい(飲み物)',t:'食事・買い物'},
+{id:'v113',h:'餐厅',p:'cāntīng',m:'レストラン',t:'食事・買い物'},
+{id:'v114',h:'菜单',p:'càidān',m:'メニュー',t:'食事・買い物'},
+{id:'v115',h:'点菜',p:'diǎncài',m:'注文する',t:'食事・買い物'},
+{id:'v116',h:'买单',p:'mǎidān',m:'お会計',t:'食事・買い物'},
+{id:'v117',h:'多少钱',p:'duōshao qián',m:'いくら?',t:'食事・買い物'},
+{id:'v118',h:'块',p:'kuài',m:'元(お金の単位)',t:'食事・買い物'},
+{id:'v119',h:'打折',p:'dǎzhé',m:'割引する',t:'食事・買い物'},
+{id:'v120',h:'超市',p:'chāoshì',m:'スーパー',t:'食事・買い物'},
+{id:'v121',h:'商店',p:'shāngdiàn',m:'店',t:'食事・買い物'},
+{id:'v122',h:'东西',p:'dōngxi',m:'もの',t:'食事・買い物'},
+{id:'v123',h:'衣服',p:'yīfu',m:'服',t:'食事・買い物'},
+{id:'v124',h:'试',p:'shì',m:'試す',t:'食事・買い物'},
+{id:'v125',h:'付钱',p:'fù qián',m:'支払う',t:'食事・買い物'},
+{id:'v126',h:'地铁',p:'dìtiě',m:'地下鉄',t:'移動・場所'},
+{id:'v127',h:'公交车',p:'gōngjiāochē',m:'路線バス',t:'移動・場所'},
+{id:'v128',h:'出租车',p:'chūzūchē',m:'タクシー',t:'移動・場所'},
+{id:'v129',h:'飞机',p:'fēijī',m:'飛行機',t:'移動・場所'},
+{id:'v130',h:'高铁',p:'gāotiě',m:'高速鉄道',t:'移動・場所'},
+{id:'v131',h:'车站',p:'chēzhàn',m:'駅',t:'移動・場所'},
+{id:'v132',h:'机场',p:'jīchǎng',m:'空港',t:'移動・場所'},
+{id:'v133',h:'酒店',p:'jiǔdiàn',m:'ホテル',t:'移動・場所'},
+{id:'v134',h:'公司',p:'gōngsī',m:'会社',t:'移動・場所'},
+{id:'v135',h:'办公室',p:'bàngōngshì',m:'オフィス',t:'移動・場所'},
+{id:'v136',h:'家',p:'jiā',m:'家',t:'移動・場所'},
+{id:'v137',h:'医院',p:'yīyuàn',m:'病院',t:'移動・場所'},
+{id:'v138',h:'银行',p:'yínháng',m:'銀行',t:'移動・場所'},
+{id:'v139',h:'厕所',p:'cèsuǒ',m:'トイレ',t:'移動・場所'},
+{id:'v140',h:'附近',p:'fùjìn',m:'近く',t:'移動・場所'},
+{id:'v141',h:'前面',p:'qiánmiàn',m:'前',t:'移動・場所'},
+{id:'v142',h:'后面',p:'hòumiàn',m:'後ろ',t:'移動・場所'},
+{id:'v143',h:'左边',p:'zuǒbian',m:'左',t:'移動・場所'},
+{id:'v144',h:'右边',p:'yòubian',m:'右',t:'移動・場所'},
+{id:'v145',h:'里面',p:'lǐmiàn',m:'中',t:'移動・場所'},
+{id:'v146',h:'外面',p:'wàimiàn',m:'外',t:'移動・場所'},
+{id:'v147',h:'远',p:'yuǎn',m:'遠い',t:'移動・場所'},
+{id:'v148',h:'近',p:'jìn',m:'近い',t:'移動・場所'},
+{id:'v149',h:'走',p:'zǒu',m:'歩く・行く',t:'移動・場所'},
+{id:'v150',h:'到',p:'dào',m:'着く',t:'移動・場所'},
+{id:'v151',h:'工作',p:'gōngzuò',m:'仕事',t:'仕事・会議'},
+{id:'v152',h:'开会',p:'kāihuì',m:'会議する',t:'仕事・会議'},
+{id:'v153',h:'会议',p:'huìyì',m:'会議',t:'仕事・会議'},
+{id:'v154',h:'同事',p:'tóngshì',m:'同僚',t:'仕事・会議'},
+{id:'v155',h:'老板',p:'lǎobǎn',m:'社長・ボス',t:'仕事・会議'},
+{id:'v156',h:'客户',p:'kèhù',m:'顧客・クライアント',t:'仕事・会議'},
+{id:'v157',h:'项目',p:'xiàngmù',m:'プロジェクト',t:'仕事・会議'},
+{id:'v158',h:'计划',p:'jìhuà',m:'計画',t:'仕事・会議'},
+{id:'v159',h:'报告',p:'bàogào',m:'報告(書)',t:'仕事・会議'},
+{id:'v160',h:'资料',p:'zīliào',m:'資料',t:'仕事・会議'},
+{id:'v161',h:'邮件',p:'yóujiàn',m:'メール',t:'仕事・会議'},
+{id:'v162',h:'发',p:'fā',m:'送る・送信する',t:'仕事・会議'},
+{id:'v163',h:'收到',p:'shōudào',m:'受け取る・受領',t:'仕事・会議'},
+{id:'v164',h:'确认',p:'quèrèn',m:'確認する',t:'仕事・会議'},
+{id:'v165',h:'联系',p:'liánxì',m:'連絡する',t:'仕事・会議'},
+{id:'v166',h:'商量',p:'shāngliang',m:'相談する',t:'仕事・会議'},
+{id:'v167',h:'决定',p:'juédìng',m:'決める',t:'仕事・会議'},
+{id:'v168',h:'问题',p:'wèntí',m:'問題・質問',t:'仕事・会議'},
+{id:'v169',h:'意见',p:'yìjiàn',m:'意見',t:'仕事・会議'},
+{id:'v170',h:'建议',p:'jiànyì',m:'提案(する)',t:'仕事・会議'},
+{id:'v171',h:'安排',p:'ānpái',m:'手配する・段取り',t:'仕事・会議'},
+{id:'v172',h:'准备',p:'zhǔnbèi',m:'準備する',t:'仕事・会議'},
+{id:'v173',h:'完成',p:'wánchéng',m:'完成する',t:'仕事・会議'},
+{id:'v174',h:'加班',p:'jiābān',m:'残業する',t:'仕事・会議'},
+{id:'v175',h:'出差',p:'chūchāi',m:'出張する',t:'仕事・会議'},
+{id:'v176',h:'市场',p:'shìchǎng',m:'市場',t:'SNS・EC・マーケ'},
+{id:'v177',h:'营销',p:'yíngxiāo',m:'マーケティング',t:'SNS・EC・マーケ'},
+{id:'v178',h:'品牌',p:'pǐnpái',m:'ブランド',t:'SNS・EC・マーケ'},
+{id:'v179',h:'产品',p:'chǎnpǐn',m:'製品',t:'SNS・EC・マーケ'},
+{id:'v180',h:'用户',p:'yònghù',m:'ユーザー',t:'SNS・EC・マーケ'},
+{id:'v181',h:'粉丝',p:'fěnsī',m:'フォロワー・ファン',t:'SNS・EC・マーケ'},
+{id:'v182',h:'内容',p:'nèiróng',m:'コンテンツ',t:'SNS・EC・マーケ'},
+{id:'v183',h:'视频',p:'shìpín',m:'動画',t:'SNS・EC・マーケ'},
+{id:'v184',h:'直播',p:'zhíbò',m:'ライブ配信',t:'SNS・EC・マーケ'},
+{id:'v185',h:'发布',p:'fābù',m:'公開する・発表する',t:'SNS・EC・マーケ'},
+{id:'v186',h:'推广',p:'tuīguǎng',m:'プロモーション',t:'SNS・EC・マーケ'},
+{id:'v187',h:'广告',p:'guǎnggào',m:'広告',t:'SNS・EC・マーケ'},
+{id:'v188',h:'评论',p:'pínglùn',m:'コメント・レビュー',t:'SNS・EC・マーケ'},
+{id:'v189',h:'点赞',p:'diǎnzàn',m:'いいねする',t:'SNS・EC・マーケ'},
+{id:'v190',h:'转发',p:'zhuǎnfā',m:'リポスト・転送',t:'SNS・EC・マーケ'},
+{id:'v191',h:'关注',p:'guānzhù',m:'フォローする・注目する',t:'SNS・EC・マーケ'},
+{id:'v192',h:'数据',p:'shùjù',m:'データ',t:'SNS・EC・マーケ'},
+{id:'v193',h:'效果',p:'xiàoguǒ',m:'効果',t:'SNS・EC・マーケ'},
+{id:'v194',h:'价格',p:'jiàgé',m:'価格',t:'SNS・EC・マーケ'},
+{id:'v195',h:'销量',p:'xiāoliàng',m:'販売数',t:'SNS・EC・マーケ'},
+{id:'v196',h:'活动',p:'huódòng',m:'キャンペーン・イベント',t:'SNS・EC・マーケ'},
+{id:'v197',h:'网站',p:'wǎngzhàn',m:'ウェブサイト',t:'SNS・EC・マーケ'},
+{id:'v198',h:'上线',p:'shàngxiàn',m:'リリースする',t:'SNS・EC・マーケ'},
+{id:'v199',h:'翻译',p:'fānyì',m:'翻訳(する)',t:'SNS・EC・マーケ'},
+{id:'v200',h:'需求',p:'xūqiú',m:'ニーズ・要望',t:'SNS・EC・マーケ'}
+];
+
+/* ============ 追加語彙(HSK3〜4級レベル・117語) ============ */
+const SEED_EXTRA=[
+{id:'x001',h:'打算',p:'dǎsuàn',m:'〜するつもり',t:'追加・動詞'},{id:'x002',h:'需要',p:'xūyào',m:'必要とする',t:'追加・動詞'},
+{id:'x003',h:'希望',p:'xīwàng',m:'望む・希望する',t:'追加・動詞'},{id:'x004',h:'帮忙',p:'bāngmáng',m:'手伝う',t:'追加・動詞'},
+{id:'x005',h:'等',p:'děng',m:'待つ',t:'追加・動詞'},{id:'x006',h:'找',p:'zhǎo',m:'探す',t:'追加・動詞'},
+{id:'x007',h:'换',p:'huàn',m:'交換する・替える',t:'追加・動詞'},{id:'x008',h:'送',p:'sòng',m:'贈る・届ける',t:'追加・動詞'},
+{id:'x009',h:'拿',p:'ná',m:'手に取る・持つ',t:'追加・動詞'},{id:'x010',h:'放',p:'fàng',m:'置く',t:'追加・動詞'},
+{id:'x011',h:'用',p:'yòng',m:'使う',t:'追加・動詞'},{id:'x012',h:'开',p:'kāi',m:'開ける・(車を)運転する',t:'追加・動詞'},
+{id:'x013',h:'关',p:'guān',m:'閉める・消す',t:'追加・動詞'},{id:'x014',h:'穿',p:'chuān',m:'着る・履く',t:'追加・動詞'},
+{id:'x015',h:'洗',p:'xǐ',m:'洗う',t:'追加・動詞'},{id:'x016',h:'睡觉',p:'shuìjiào',m:'寝る',t:'追加・動詞'},
+{id:'x017',h:'起床',p:'qǐchuáng',m:'起きる',t:'追加・動詞'},{id:'x018',h:'上班',p:'shàngbān',m:'出勤する',t:'追加・動詞'},
+{id:'x019',h:'下班',p:'xiàbān',m:'退勤する',t:'追加・動詞'},{id:'x020',h:'见面',p:'jiànmiàn',m:'会う',t:'追加・動詞'},
+{id:'x021',h:'迟到',p:'chídào',m:'遅刻する',t:'追加・動詞'},{id:'x022',h:'忘记',p:'wàngjì',m:'忘れる',t:'追加・動詞'},
+{id:'x023',h:'记得',p:'jìde',m:'覚えている',t:'追加・動詞'},{id:'x024',h:'明白',p:'míngbai',m:'理解している・わかる',t:'追加・動詞'},
+{id:'x025',h:'相信',p:'xiāngxìn',m:'信じる',t:'追加・動詞'},{id:'x026',h:'检查',p:'jiǎnchá',m:'チェックする・点検する',t:'追加・動詞'},
+{id:'x027',h:'解决',p:'jiějué',m:'解決する',t:'追加・動詞'},{id:'x028',h:'介绍',p:'jièshào',m:'紹介する',t:'追加・動詞'},
+{id:'x029',h:'舒服',p:'shūfu',m:'心地よい・体調がよい',t:'追加・気持ち'},{id:'x030',h:'奇怪',p:'qíguài',m:'不思議・変だ',t:'追加・気持ち'},
+{id:'x031',h:'简单',p:'jiǎndān',m:'簡単・シンプル',t:'追加・気持ち'},{id:'x032',h:'复杂',p:'fùzá',m:'複雑',t:'追加・気持ち'},
+{id:'x033',h:'认真',p:'rènzhēn',m:'まじめ・真剣',t:'追加・気持ち'},{id:'x034',h:'努力',p:'nǔlì',m:'努力する',t:'追加・気持ち'},
+{id:'x035',h:'满意',p:'mǎnyì',m:'満足する',t:'追加・気持ち'},{id:'x036',h:'紧张',p:'jǐnzhāng',m:'緊張する',t:'追加・気持ち'},
+{id:'x037',h:'放心',p:'fàngxīn',m:'安心する',t:'追加・気持ち'},{id:'x038',h:'生气',p:'shēngqì',m:'怒る',t:'追加・気持ち'},
+{id:'x039',h:'开心',p:'kāixīn',m:'楽しい・うれしい',t:'追加・気持ち'},{id:'x040',h:'无聊',p:'wúliáo',m:'退屈',t:'追加・気持ち'},
+{id:'x041',h:'饿',p:'è',m:'空腹だ',t:'追加・気持ち'},{id:'x042',h:'渴',p:'kě',m:'のどが渇いた',t:'追加・気持ち'},
+{id:'x043',h:'困',p:'kùn',m:'眠い',t:'追加・気持ち'},{id:'x044',h:'疼',p:'téng',m:'痛い',t:'追加・気持ち'},
+{id:'x045',h:'感冒',p:'gǎnmào',m:'風邪(をひく)',t:'追加・気持ち'},{id:'x046',h:'发烧',p:'fāshāo',m:'熱が出る',t:'追加・気持ち'},
+{id:'x047',h:'安全',p:'ānquán',m:'安全',t:'追加・気持ち'},{id:'x048',h:'干净',p:'gānjìng',m:'清潔・きれい',t:'追加・気持ち'},
+{id:'x049',h:'脏',p:'zāng',m:'汚い',t:'追加・気持ち'},{id:'x050',h:'有名',p:'yǒumíng',m:'有名',t:'追加・気持ち'},
+{id:'x051',h:'已经',p:'yǐjīng',m:'すでに・もう',t:'追加・副詞'},{id:'x052',h:'正在',p:'zhèngzài',m:'ちょうど〜している',t:'追加・副詞'},
+{id:'x053',h:'突然',p:'tūrán',m:'突然',t:'追加・副詞'},{id:'x054',h:'一直',p:'yìzhí',m:'ずっと・まっすぐ',t:'追加・副詞'},
+{id:'x055',h:'经常',p:'jīngcháng',m:'よく・しばしば',t:'追加・副詞'},{id:'x056',h:'有时候',p:'yǒu shíhou',m:'時々',t:'追加・副詞'},
+{id:'x057',h:'后来',p:'hòulái',m:'その後(過去の話)',t:'追加・副詞'},{id:'x058',h:'终于',p:'zhōngyú',m:'ついに・ようやく',t:'追加・副詞'},
+{id:'x059',h:'先',p:'xiān',m:'まず・先に',t:'追加・副詞'},{id:'x060',h:'一起',p:'yìqǐ',m:'一緒に',t:'追加・副詞'},
+{id:'x061',h:'一般',p:'yìbān',m:'普通は・一般的に',t:'追加・副詞'},{id:'x062',h:'大概',p:'dàgài',m:'たぶん・おおよそ',t:'追加・副詞'},
+{id:'x063',h:'差不多',p:'chàbuduō',m:'だいたい・ほぼ同じ',t:'追加・副詞'},{id:'x064',h:'越来越',p:'yuè lái yuè',m:'ますます〜',t:'追加・副詞'},
+{id:'x065',h:'因为',p:'yīnwèi',m:'なぜなら・〜なので',t:'追加・つなぎ'},{id:'x066',h:'所以',p:'suǒyǐ',m:'だから',t:'追加・つなぎ'},
+{id:'x067',h:'但是',p:'dànshì',m:'しかし',t:'追加・つなぎ'},{id:'x068',h:'虽然',p:'suīrán',m:'〜だけれども',t:'追加・つなぎ'},
+{id:'x069',h:'如果',p:'rúguǒ',m:'もし',t:'追加・つなぎ'},{id:'x070',h:'或者',p:'huòzhě',m:'あるいは(平叙文で)',t:'追加・つなぎ'},
+{id:'x071',h:'还是',p:'háishi',m:'それとも(疑問文で)',t:'追加・つなぎ'},{id:'x072',h:'而且',p:'érqiě',m:'その上・しかも',t:'追加・つなぎ'},
+{id:'x073',h:'比如',p:'bǐrú',m:'たとえば',t:'追加・つなぎ'},{id:'x074',h:'关于',p:'guānyú',m:'〜について',t:'追加・つなぎ'},
+{id:'x075',h:'除了',p:'chúle',m:'〜以外・〜のほかに',t:'追加・つなぎ'},{id:'x076',h:'应该',p:'yīnggāi',m:'〜すべき・〜のはず',t:'追加・つなぎ'},
+{id:'x077',h:'别',p:'bié',m:'〜しないで',t:'追加・つなぎ'},
+{id:'x078',h:'天气',p:'tiānqì',m:'天気',t:'追加・生活'},{id:'x079',h:'下雨',p:'xià yǔ',m:'雨が降る',t:'追加・生活'},
+{id:'x080',h:'冷',p:'lěng',m:'寒い',t:'追加・生活'},{id:'x081',h:'热',p:'rè',m:'暑い・熱い',t:'追加・生活'},
+{id:'x082',h:'生日',p:'shēngrì',m:'誕生日',t:'追加・生活'},{id:'x083',h:'礼物',p:'lǐwù',m:'プレゼント',t:'追加・生活'},
+{id:'x084',h:'电影',p:'diànyǐng',m:'映画',t:'追加・生活'},{id:'x085',h:'音乐',p:'yīnyuè',m:'音楽',t:'追加・生活'},
+{id:'x086',h:'运动',p:'yùndòng',m:'運動(する)',t:'追加・生活'},{id:'x087',h:'旅行',p:'lǚxíng',m:'旅行(する)',t:'追加・生活'},
+{id:'x088',h:'照片',p:'zhàopiàn',m:'写真',t:'追加・生活'},{id:'x089',h:'手机',p:'shǒujī',m:'スマホ・携帯',t:'追加・生活'},
+{id:'x090',h:'电脑',p:'diànnǎo',m:'パソコン',t:'追加・生活'},{id:'x091',h:'网络',p:'wǎngluò',m:'インターネット',t:'追加・生活'},
+{id:'x092',h:'密码',p:'mìmǎ',m:'パスワード',t:'追加・生活'},{id:'x093',h:'地址',p:'dìzhǐ',m:'住所',t:'追加・生活'},
+{id:'x094',h:'房间',p:'fángjiān',m:'部屋',t:'追加・生活'},{id:'x095',h:'钥匙',p:'yàoshi',m:'鍵',t:'追加・生活'},
+{id:'x096',h:'行李',p:'xíngli',m:'荷物',t:'追加・生活'},{id:'x097',h:'护照',p:'hùzhào',m:'パスポート',t:'追加・生活'},
+{id:'x098',h:'医生',p:'yīshēng',m:'医者',t:'追加・生活'},{id:'x099',h:'药',p:'yào',m:'薬',t:'追加・生活'},
+{id:'x100',h:'经理',p:'jīnglǐ',m:'マネージャー・部長',t:'追加・仕事'},{id:'x101',h:'部门',p:'bùmén',m:'部門・部署',t:'追加・仕事'},
+{id:'x102',h:'通知',p:'tōngzhī',m:'通知(する)',t:'追加・仕事'},{id:'x103',h:'合作',p:'hézuò',m:'協力・提携(する)',t:'追加・仕事'},
+{id:'x104',h:'合同',p:'hétong',m:'契約(書)',t:'追加・仕事'},{id:'x105',h:'签字',p:'qiānzì',m:'サインする',t:'追加・仕事'},
+{id:'x106',h:'发票',p:'fāpiào',m:'領収書・インボイス',t:'追加・仕事'},{id:'x107',h:'预算',p:'yùsuàn',m:'予算',t:'追加・仕事'},
+{id:'x108',h:'目标',p:'mùbiāo',m:'目標',t:'追加・仕事'},{id:'x109',h:'结果',p:'jiéguǒ',m:'結果',t:'追加・仕事'},
+{id:'x110',h:'原因',p:'yuányīn',m:'原因',t:'追加・仕事'},{id:'x111',h:'方法',p:'fāngfǎ',m:'方法',t:'追加・仕事'},
+{id:'x112',h:'机会',p:'jīhuì',m:'チャンス・機会',t:'追加・仕事'},{id:'x113',h:'经验',p:'jīngyàn',m:'経験',t:'追加・仕事'},
+{id:'x114',h:'水平',p:'shuǐpíng',m:'レベル・水準',t:'追加・仕事'},{id:'x115',h:'情况',p:'qíngkuàng',m:'状況',t:'追加・仕事'},
+{id:'x116',h:'质量',p:'zhìliàng',m:'品質',t:'追加・仕事'},{id:'x117',h:'服务',p:'fúwù',m:'サービス',t:'追加・仕事'}
+];
+
+/* ============ 発音チェック用フレーズ(20本) ============ */
+const PHRASES=[
+{c:'你好,很高兴认识你。',p:'Nǐ hǎo, hěn gāoxìng rènshi nǐ.'},
+{c:'我是日本人,我在学汉语。',p:'Wǒ shì Rìběnrén, wǒ zài xué Hànyǔ.'},
+{c:'请再说一遍。',p:'Qǐng zài shuō yí biàn.'},
+{c:'请说慢一点。',p:'Qǐng shuō màn yìdiǎn.'},
+{c:'我听不懂。',p:'Wǒ tīng bu dǒng.'},
+{c:'没问题,我马上发给你。',p:'Méi wèntí, wǒ mǎshàng fā gěi nǐ.'},
+{c:'资料我收到了。',p:'Zīliào wǒ shōudào le.'},
+{c:'明天下午三点开会。',p:'Míngtiān xiàwǔ sān diǎn kāihuì.'},
+{c:'我想喝一杯咖啡。',p:'Wǒ xiǎng hē yì bēi kāfēi.'},
+{c:'这个多少钱?',p:'Zhège duōshao qián?'},
+{c:'有点贵,能便宜一点吗?',p:'Yǒudiǎn guì, néng piányi yìdiǎn ma?'},
+{c:'地铁站怎么走?',p:'Dìtiězhàn zěnme zǒu?'},
+{c:'我可能要迟到十分钟。',p:'Wǒ kěnéng yào chídào shí fēnzhōng.'},
+{c:'周末过得怎么样?',p:'Zhōumò guò de zěnmeyàng?'},
+{c:'我去过两次上海。',p:'Wǒ qùguo liǎng cì Shànghǎi.'},
+{c:'请把资料发给我。',p:'Qǐng bǎ zīliào fā gěi wǒ.'},
+{c:'今天比昨天热。',p:'Jīntiān bǐ zuótiān rè.'},
+{c:'我确认一下再回复你。',p:'Wǒ quèrèn yíxià zài huífù nǐ.'},
+{c:'你能帮我一下吗?',p:'Nǐ néng bāng wǒ yíxià ma?'},
+{c:'我在学汉语,说错了请告诉我。',p:'Wǒ zài xué Hànyǔ, shuōcuò le qǐng gàosu wǒ.'}
+];
+
+/* ============ TTS ============ */
+let RATE=0.85,zhVoice=null,curU=null;
+const hasTTS=('speechSynthesis' in window)&&('SpeechSynthesisUtterance' in window);
+function pickVoice(){if(!hasTTS)return;const vs=speechSynthesis.getVoices();const zh=vs.filter(v=>v.lang&&v.lang.toLowerCase().replace('_','-').indexOf('zh')===0);zhVoice=zh.find(v=>/cn|hans|mandarin|普通|中文|台/i.test(v.lang+' '+v.name))||zh[0]||null;}
+if(hasTTS){pickVoice();speechSynthesis.onvoiceschanged=pickVoice;}
+function speak(t,opt){opt=opt||{};if(!hasTTS)return;speechSynthesis.cancel();setTimeout(()=>{const u=new SpeechSynthesisUtterance(t);u.lang='zh-CN';if(zhVoice)u.voice=zhVoice;u.rate=opt.rate||RATE;curU=u;speechSynthesis.speak(u);},60);}
+document.getElementById('rate').addEventListener('change',e=>{RATE=parseFloat(e.target.value);});
+
+/* ============ 保存アダプタ(Claude内→ブラウザ→一時の順) ============ */
+const KEY='mimikara-dojo-v1';
+let MODE='mem',MEM=null;
+async function storeInit(){
+  if(window.storage&&window.storage.set){try{const r=await window.storage.set(KEY+'-ping','1');if(r){MODE='claude';return;}}catch(e){}}
+  try{localStorage.setItem('__mk','1');localStorage.removeItem('__mk');MODE='local';return;}catch(e){}
+  MODE='mem';
+}
+async function dbLoad(){
+  if(MODE==='claude'){try{const r=await window.storage.get(KEY);return r?JSON.parse(r.value):null;}catch(e){return null;}}
+  if(MODE==='local'){try{return JSON.parse(localStorage.getItem(KEY)||'null');}catch(e){return null;}}
+  return MEM;
+}
+async function dbSave(){
+  const s=JSON.stringify(DB);
+  if(MODE==='claude'){try{await window.storage.set(KEY,s);}catch(e){}}
+  else if(MODE==='local'){try{localStorage.setItem(KEY,s);}catch(e){}}
+  else MEM=DB;
+}
+const storeLabel=()=>MODE==='claude'?'保存先:Claude内(この端末×Claude)':MODE==='local'?'保存先:このブラウザ':'⚠ 一時保存:閉じると進捗が消えます';
+
+/* ============ 共通 ============ */
+function el(i){return document.getElementById(i)}
+function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+const today=()=>Math.floor((Date.now()-new Date().getTimezoneOffset()*60000)/86400000);
+const todayStr=()=>new Date().toLocaleDateString('sv-SE');
+let DB=null;
+const ALL=()=>SEED_APP.concat(SEED_EXTRA,DB.custom);
+const byId=id=>ALL().find(c=>c.id===id);
+
+/* ============ SRSエンジン ============ */
+function schedule(st,rating){
+  const s=Object.assign({iv:0,ease:2.5,reps:0,lap:0,stt:'new',due:0},st||{});
+  if(s.stt==='new'||s.stt==='learn'){
+    if(rating===0){s.stt='learn';s.due=today();s.reps++;return{s,requeue:true};}
+    s.iv=[0,1,2,4][rating];s.stt='rev';s.reps++;s.due=today()+s.iv;return{s,requeue:false};
+  }
+  if(rating===0){s.lap++;s.ease=Math.max(1.3,s.ease-0.2);s.iv=1;s.stt='learn';s.reps++;s.due=today();return{s,requeue:true};}
+  if(rating===1){s.iv=Math.max(s.iv+1,Math.round(s.iv*1.2));s.ease=Math.max(1.3,s.ease-0.15);}
+  if(rating===2){s.iv=Math.round(s.iv*s.ease);}
+  if(rating===3){s.iv=Math.round(s.iv*s.ease*1.35);s.ease=Math.min(3,s.ease+0.15);}
+  s.iv=Math.min(365,Math.max(1,s.iv));s.reps++;s.due=today()+s.iv;return{s,requeue:false};
+}
+function previewIv(st,rating){
+  const r=schedule(st?JSON.parse(JSON.stringify(st)):null,rating);
+  return r.requeue?'すぐ':(r.s.iv+'日');
+}
+function dueIds(){return Object.keys(DB.states).filter(id=>DB.states[id].due<=today()&&byId(id));}
+function unseenIds(){return ALL().filter(c=>!DB.states[c.id]).map(c=>c.id);}
+function newRemainToday(){return Math.max(0,DB.newPerDay-(DB.intro[todayStr()]||0));}
+
+/* ============ 復習タブ ============ */
+let sess={q:[],pos:0,rev:false,active:false,doneCount:0};
+function startSession(extraNew){
+  const news=unseenIds().slice(0,extraNew?10:newRemainToday());
+  sess={q:dueIds().concat(news),pos:0,rev:false,active:true,doneCount:0};
+  if(extraNew&&news.length){DB.intro[todayStr()]=(DB.intro[todayStr()]||0);} 
+  renderRev();
+  if(sess.q.length&&DB.qmode==='listen')speak(byId(sess.q[0]).h);
+}
+function answer(rating){
+  const id=sess.q[sess.pos];
+  const fresh=!DB.states[id];
+  const r=schedule(DB.states[id],rating);
+  DB.states[id]=r.s;
+  if(fresh)DB.intro[todayStr()]=(DB.intro[todayStr()]||0)+1;
+  if(r.requeue){const re=sess.q.splice(sess.pos,1)[0];sess.q.splice(Math.min(sess.pos+3,sess.q.length),0,re);}
+  else{sess.pos++;sess.doneCount++;}
+  sess.rev=false;
+  dbSave();
+  renderRev();
+  if(sess.pos<sess.q.length&&DB.qmode==='listen')speak(byId(sess.q[sess.pos]).h);
+}
+function renderRev(){
+  const learned=Object.values(DB.states).filter(s=>s.stt==='rev').length;
+  const statsHtml=`<div class="stats">
+    <div class="stat due"><div class="n">${dueIds().length}</div><div class="l">今日の復習</div></div>
+    <div class="stat"><div class="n">${Math.min(newRemainToday(),unseenIds().length)}</div><div class="l">今日の新規</div></div>
+    <div class="stat"><div class="n">${learned}</div><div class="l">習得中カード</div></div>
+  </div>
+  <div class="row between" style="margin-bottom:12px">
+    <span class="badge b-store">${storeLabel()}</span>
+    <span class="row" style="gap:6px">
+      <select id="qmode"><option value="listen"${DB.qmode==='listen'?' selected':''}>音 → 意味</option><option value="ja"${DB.qmode==='ja'?' selected':''}>日 → 中</option></select>
+      <select id="npd"><option value="5"${DB.newPerDay===5?' selected':''}>新規5/日</option><option value="10"${DB.newPerDay===10?' selected':''}>新規10/日</option><option value="20"${DB.newPerDay===20?' selected':''}>新規20/日</option></select>
+    </span>
+  </div>`;
+  const c=el('tab-rev');
+  if(!sess.active){
+    const total=dueIds().length+Math.min(newRemainToday(),unseenIds().length);
+    c.innerHTML=statsHtml+(total
+      ?`<button class="btn wide" id="startBtn">復習をはじめる(${total}枚)</button>`
+      :`<div class="done"><div class="zh-big">完成!</div><p class="muted" style="margin-top:6px">今日のノルマは終わりです。明日また会いましょう。</p><button class="btn quiet mt12" id="moreBtn">新規カードを10枚だけ前倒しする</button></div>`);
+    const sb=el('startBtn');if(sb)sb.onclick=()=>startSession(false);
+    const mb=el('moreBtn');if(mb)mb.onclick=()=>startSession(true);
+  }else if(sess.pos>=sess.q.length){
+    sess.active=false;
+    c.innerHTML=statsHtml+`<div class="done"><div class="zh-big">辛苦了!</div><p class="muted" style="margin-top:6px">${sess.doneCount}枚 完了。復習は明日以降に熟成されます。</p></div>`;
+  }else{
+    const id=sess.q[sess.pos];const w=byId(id);const st=DB.states[id];
+    const isNew=!st||st.stt==='new'||st.stt==='learn';
+    let front,ans='';
+    if(DB.qmode==='listen')front=sess.rev?`<div class="big zh">${w.h}</div>`:`<div class="hidden-mark">音</div>`;
+    else front=sess.rev?`<div class="big zh">${w.h}</div>`:`<div class="front-ja">${esc(w.m)}</div>`;
+    if(sess.rev)ans=`<div class="pinyin">${esc(w.p)}</div>`+(DB.qmode==='listen'?`<div class="meaning">${esc(w.m)}</div>`:'');
+    c.innerHTML=statsHtml+`
+    <div class="card">
+      <div class="row between"><span class="badge ${isNew?'b-new':'b-rev'}">${isNew?'新規':'復習'}</span><span class="muted" style="font-size:.72rem">${w.t}</span></div>
+      <div class="tzg-wrap"><div class="tzg">${front}</div></div>
+      <div class="card-answer">${ans}</div>
+      <div class="row center mt8">
+        <button class="btn ghost" id="rPlay"><span class="icon-play"></span>再生</button>
+        ${sess.rev?'':'<button class="btn" id="rReveal">答えを見る</button>'}
+      </div>
+      ${sess.rev?`<div class="rate4">
+        <button class="r-again" data-r="0">もう一度<span class="iv">${previewIv(st,0)}</span></button>
+        <button data-r="1">難しい<span class="iv">${previewIv(st,1)}</span></button>
+        <button class="r-good" data-r="2">普通<span class="iv">${previewIv(st,2)}</span></button>
+        <button class="r-easy" data-r="3">簡単<span class="iv">${previewIv(st,3)}</span></button>
+      </div>`:''}
+      <div class="progress">残り ${sess.q.length-sess.pos} 枚</div>
+    </div>`;
+    el('rPlay').onclick=()=>speak(w.h);
+    const rv=el('rReveal');if(rv)rv.onclick=()=>{sess.rev=true;renderRev();if(DB.qmode==='ja')speak(w.h);};
+    c.querySelectorAll('.rate4 button').forEach(b=>{b.onclick=()=>answer(+b.dataset.r);});
+  }
+  const qm=el('qmode');if(qm)qm.onchange=()=>{DB.qmode=qm.value;dbSave();renderRev();};
+  const np=el('npd');if(np)np.onchange=()=>{DB.newPerDay=+np.value;dbSave();renderRev();};
+}
+
+/* ============ 単語管理タブ ============ */
+let resetArmed=false;
+function renderManage(){
+  el('tab-manage').innerHTML=`
+  <div class="card"><h2>検索<span class="tag">キット内ミニ辞書</span></h2>
+    <input type="text" id="q" placeholder="漢字・ピンイン・日本語で検索" style="width:100%">
+    <div id="qOut"></div></div>
+  <div class="card"><h2>カードを追加</h2>
+    <p class="muted" style="font-size:.76rem">仕事やレッスンで出会った単語をここへ。ピンインが不明なら空欄でもOK(あとでClaudeに聞いて追記)。</p>
+    <div class="row mt8"><input type="text" id="aH" placeholder="漢字" style="flex:1"><input type="text" id="aP" placeholder="ピンイン" style="flex:1"></div>
+    <input type="text" id="aM" placeholder="日本語の意味" style="width:100%;margin-top:8px">
+    <button class="btn wide mt8" id="aGo">追加する</button><div id="aMsg"></div></div>
+  <div class="card"><h2>インポート / エクスポート<span class="tag">Anki連携用</span></h2>
+    <p class="muted" style="font-size:.76rem">1行1語「漢字(タブかカンマ)ピンイン(タブかカンマ)意味」。エクスポートした内容はAnki等にそのまま取り込めます。</p>
+    <textarea id="ioBox" placeholder="打算,dǎsuàn,〜するつもり"></textarea>
+    <div class="row mt8"><button class="btn ghost sm" id="ioExp">全カードを書き出す</button><button class="btn sm" id="ioImp">貼り付けた内容を取り込む</button></div>
+    <div id="ioMsg"></div></div>
+  <div class="card"><h2>進捗のリセット</h2><button class="btn red sm" id="rst">学習履歴を初期化する</button></div>`;
+  el('q').oninput=()=>{
+    const v=el('q').value.trim().toLowerCase();
+    if(!v){el('qOut').innerHTML='';return;}
+    const hits=ALL().filter(c=>(c.h+c.p+c.m).toLowerCase().includes(v)).slice(0,30);
+    el('qOut').innerHTML=hits.length?hits.map(c=>`<div class="list-item"><span class="h zh">${esc(c.h)}</span><span class="p">${esc(c.p)}</span><span class="m">${esc(c.m)}</span><button class="btn ghost sm" data-s="${esc(c.h)}"><span class="icon-play"></span></button>${c.id[0]==='c'?`<button class="btn quiet sm" data-del="${c.id}">削除</button>`:''}</div>`).join(''):'<p class="muted mt8">見つかりませんでした。下のフォームから追加できます。</p>';
+    el('qOut').querySelectorAll('[data-s]').forEach(b=>b.onclick=()=>speak(b.dataset.s));
+    el('qOut').querySelectorAll('[data-del]').forEach(b=>b.onclick=()=>{DB.custom=DB.custom.filter(c=>c.id!==b.dataset.del);delete DB.states[b.dataset.del];dbSave();el('q').oninput();});
+  };
+  el('aGo').onclick=()=>{
+    const h=el('aH').value.trim(),p=el('aP').value.trim(),m=el('aM').value.trim();
+    if(!h||!m){el('aMsg').innerHTML='<div class="err-box">漢字と意味は必須です。</div>';return;}
+    DB.custom.push({id:'c'+Date.now(),h,p,m,t:'マイ単語'});dbSave();
+    el('aH').value='';el('aP').value='';el('aM').value='';
+    el('aMsg').innerHTML='<p class="muted mt8">追加しました。次回の「復習」から新規カードとして出題されます。</p>';
+    renderRev();
+  };
+  el('ioExp').onclick=()=>{el('ioBox').value=ALL().map(c=>[c.h,c.p,c.m].join('\t')).join('\n');el('ioMsg').innerHTML='<p class="muted mt8">全カードを書き出しました。全選択してコピーしてください。</p>';};
+  el('ioImp').onclick=()=>{
+    const lines=el('ioBox').value.split('\n').map(l=>l.trim()).filter(Boolean);
+    let n=0;
+    lines.forEach(l=>{const a=l.split(/\t|,/).map(x=>x.trim());if(a[0]&&a.length>=2){DB.custom.push({id:'c'+Date.now()+'-'+n,h:a[0],p:a[1]||'',m:a[2]||a[1],t:'マイ単語'});n++;}});
+    dbSave();el('ioMsg').innerHTML=`<p class="muted mt8">${n}枚を取り込みました。</p>`;renderRev();
+  };
+  el('rst').onclick=()=>{
+    if(!resetArmed){resetArmed=true;el('rst').textContent='本当に初期化する(もう一度タップ)';return;}
+    DB.states={};DB.intro={};resetArmed=false;dbSave();renderManage();renderRev();
+  };
+}
+
+/* ============ 発音チェックタブ ============ */
+const SRClass=window.SpeechRecognition||window.webkitSpeechRecognition;
+let pr={idx:0,free:'',result:null,listening:false,err:''};
+function norm(s){
+  s=String(s).replace(/[\s,。、,.!?!?::;;・…""''「」()()~〜]/g,'');
+  s=s.replace(/10/g,'十');
+  const D={'0':'零','1':'一','2':'二','3':'三','4':'四','5':'五','6':'六','7':'七','8':'八','9':'九'};
+  s=s.replace(/[0-9]/g,d=>D[d]);
+  return s.replace(/两/g,'二');
+}
+function lcsFlags(t,h){
+  const n=t.length,m=h.length;
+  const dp=Array.from({length:n+1},()=>new Array(m+1).fill(0));
+  for(let i=1;i<=n;i++)for(let j=1;j<=m;j++)dp[i][j]=t[i-1]===h[j-1]?dp[i-1][j-1]+1:Math.max(dp[i-1][j],dp[i][j-1]);
+  const flags=new Array(n).fill(false);let i=n,j=m;
+  while(i>0&&j>0){if(t[i-1]===h[j-1]){flags[i-1]=true;i--;j--;}else if(dp[i-1][j]>=dp[i][j-1])i--;else j--;}
+  return flags;
+}
+function prTarget(){return pr.idx<0?pr.free:PHRASES[pr.idx].c;}
+function renderPron(){
+  const supported=!!SRClass;
+  const t=prTarget();
+  let resHtml='';
+  if(pr.err)resHtml=`<div class="err-box">${esc(pr.err)}</div>`;
+  else if(pr.result!==null){
+    const tn=norm(t),hn=norm(pr.result);
+    const flags=lcsFlags(tn.split(''),hn.split(''));
+    const ok=flags.filter(Boolean).length;
+    const score=tn.length?Math.round(ok/tn.length*100):0;
+    const verdict=score>=90?'◎ 通じる発音です!':score>=70?'○ 惜しい!赤い字を重点練習':'△ お手本をもう一度聞いてから再挑戦';
+    resHtml=`<div class="diff zh mt12">${tn.split('').map((ch,i)=>`<span class="${flags[i]?'ok':'ng'}">${esc(ch)}</span>`).join('')}</div>
+    <div class="scoreline">${score}点 ── ${verdict}</div>
+    <div class="heard">認識結果:${esc(pr.result)||'(無音)'}</div>`;
+  }
+  el('tab-pron').innerHTML=`
+  <div class="card"><h2>発音チェック<span class="tag">音声認識で通じ度テスト</span></h2>
+    <p class="muted" style="font-size:.78rem">スマホの中国語音声認識に話しかけ、<b>正しく文字化されるか</b>で「通じる発音か」を判定します。声調が崩れると別の字になるので、実用的な近似テストになります。</p>
+    ${supported?'':'<div class="err-box">この環境では音声認識が使えません。ホスティング版(ホーム画面のアプリ)や、ChromeまたはSafariで開くと使えます。マイク許可とネット接続が必要です。</div>'}
+    <div class="row mt12"><select id="prSel" style="flex:1">${PHRASES.map((p,i)=>`<option value="${i}"${i===pr.idx?' selected':''}>${p.c}</option>`).join('')}<option value="-1"${pr.idx<0?' selected':''}>(自由入力)</option></select></div>
+    ${pr.idx<0?`<input type="text" id="prFree" placeholder="練習したい中国語を入力" value="${esc(pr.free)}" style="width:100%;margin-top:8px">`:''}
+    <div style="text-align:center;margin-top:14px">
+      <div class="zh" style="font-size:1.5rem;font-weight:700;line-height:1.7">${esc(t)||'―'}</div>
+      ${pr.idx>=0?`<div class="pinyin">${esc(PHRASES[pr.idx].p)}</div>`:''}
+      <button class="btn ghost sm mt8" id="prHear"><span class="icon-play"></span>お手本を聞く</button>
+    </div>
+    <button class="rec-btn${pr.listening?' listening':''}" id="prRec" ${supported?'':'disabled'}>${pr.listening?'認識中…':'話す'}</button>
+    <p class="muted" style="text-align:center;font-size:.72rem">タップ → お手本の文を発音</p>
+    ${resHtml}
+    <div class="note">判定できるのは「通じるか」まで。声調の美しさ・自然さの仕上げは、週1回のオンラインレッスンで人間に見てもらってください。数字の表記ゆれ(十↔10など)は自動で吸収します。</div>
+  </div>`;
+  el('prSel').onchange=e=>{pr.idx=+e.target.value;pr.result=null;pr.err='';renderPron();};
+  const pf=el('prFree');if(pf)pf.onchange=()=>{pr.free=pf.value.trim();pr.result=null;renderPron();};
+  el('prHear').onclick=()=>{if(prTarget())speak(prTarget());};
+  el('prRec').onclick=()=>{
+    if(!SRClass||pr.listening)return;
+    if(!prTarget()){pr.err='まず文を選ぶか入力してください。';renderPron();return;}
+    pr.err='';pr.result=null;pr.listening=true;renderPron();
+    try{
+      const r=new SRClass();
+      r.lang='zh-CN';r.interimResults=false;r.maxAlternatives=1;
+      r.onresult=e=>{pr.result=e.results[0][0].transcript;};
+      r.onerror=e=>{
+        const map={'not-allowed':'マイクの使用が許可されていません。ブラウザ設定でマイクを許可してください。','no-speech':'音声が検出されませんでした。もう少し大きな声でどうぞ。','network':'音声認識にはネット接続が必要です。','audio-capture':'マイクが見つかりませんでした。'};
+        pr.err=map[e.error]||('認識エラー:'+e.error+'。この環境では使えない可能性があります。');
+      };
+      r.onend=()=>{pr.listening=false;renderPron();};
+      r.start();
+    }catch(e){pr.listening=false;pr.err='この環境では音声認識を開始できませんでした。ホスティング版かブラウザでお試しください。';renderPron();}
+  };
+}
+
+/* ============ 初期化 ============ */
+(async()=>{
+  await storeInit();
+  DB=(await dbLoad())||{ver:1,newPerDay:10,qmode:'listen',states:{},custom:[],intro:{}};
+  const seg=el('mainSeg');
+  seg.addEventListener('click',e=>{
+    const b=e.target.closest('button[data-p]');if(!b)return;
+    if(hasTTS)speechSynthesis.cancel();
+    seg.querySelectorAll('button').forEach(x=>x.classList.toggle('on',x===b));
+    ['rev','manage','pron'].forEach(k=>{el('tab-'+k).style.display=(k===b.dataset.p)?'block':'none';});
+  });
+  ['manage','pron'].forEach(k=>el('tab-'+k).style.display='none');
+  renderRev();renderManage();renderPron();
+})();
+</script>
+<script>if('serviceWorker' in navigator){window.addEventListener('load',function(){navigator.serviceWorker.register('./sw.js').catch(function(){})})}</script>
+</body>
+</html>

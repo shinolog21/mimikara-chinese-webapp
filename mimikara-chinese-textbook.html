@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>耳から中国語|別冊テキスト</title>
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#F2F2EA">
+<link rel="apple-touch-icon" sizes="180x180" href="icon-180.png">
+<link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@600;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Noto+Serif+SC:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F2F2EA; --card:#FBFAF3; --ink:#20241F; --ink2:#5F6458;
+  --line:#DBDACB; --blue:#2C4A9A; --blue-soft:#E7EBF6;
+  --red:#BE3A1D; --red-soft:#F6E7E1; --green:#3F7A50; --green-soft:#E5EFE7;
+  --mask:#E9E8DB;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{font-size:16px;scroll-behavior:smooth}
+body{font-family:'Zen Kaku Gothic New',system-ui,sans-serif;background:var(--paper);color:var(--ink);line-height:1.9}
+.zh{font-family:'Noto Serif SC','Shippori Mincho B1',serif}
+main{max-width:680px;margin:0 auto;padding:28px 20px 80px}
+
+/* 表紙 */
+.cover{border:1px solid var(--line);border-radius:16px;background:linear-gradient(165deg,#FBFAF3 55%,#EFF1E9);padding:34px 26px;position:relative;overflow:hidden;margin-bottom:22px}
+.cover::after{content:'读';position:absolute;right:-16px;bottom:-40px;font-family:'Noto Serif SC',serif;font-size:8rem;font-weight:700;color:rgba(44,74,154,.07);pointer-events:none}
+.cover .series{font-size:.72rem;font-weight:700;letter-spacing:.22em;color:var(--red)}
+.cover h1{font-family:'Shippori Mincho B1',serif;font-weight:800;font-size:1.7rem;letter-spacing:.04em;line-height:1.5;margin:8px 0 10px}
+.cover p{font-size:.86rem;color:var(--ink2);position:relative;z-index:1}
+
+/* 見出し */
+h2{font-family:'Shippori Mincho B1',serif;font-weight:800;font-size:1.35rem;letter-spacing:.04em;line-height:1.5;margin:56px 0 6px;display:flex;align-items:center;gap:12px}
+.chnum{flex-shrink:0;width:44px;height:44px;border:2px solid var(--ink);border-radius:5px;position:relative;display:flex;align-items:center;justify-content:center;font-size:1.15rem;background:#FDFCF7}
+.chnum::before{content:'';position:absolute;left:0;right:0;top:50%;border-top:1px dashed #D8D6C2}
+.chnum::after{content:'';position:absolute;top:0;bottom:0;left:50%;border-left:1px dashed #D8D6C2}
+.chnum span{position:relative;z-index:1;font-family:'Shippori Mincho B1',serif;color:var(--red)}
+.ch-app{font-size:.72rem;font-weight:700;color:var(--blue);background:var(--blue-soft);border-radius:999px;padding:3px 12px;display:inline-block;margin:2px 0 18px}
+h3{font-family:'Shippori Mincho B1',serif;font-weight:800;font-size:1.05rem;letter-spacing:.03em;margin:34px 0 10px;padding-left:12px;border-left:4px solid var(--red)}
+h4{font-size:.92rem;font-weight:700;margin:22px 0 6px;color:var(--blue)}
+p{font-size:.92rem;margin-bottom:14px}
+strong{font-weight:700}
+em{font-style:normal;background:linear-gradient(transparent 65%,var(--red-soft) 65%)}
+
+/* 部品 */
+.toc{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin-bottom:10px}
+.toc .t{font-family:'Shippori Mincho B1',serif;font-weight:800;font-size:.95rem;margin-bottom:10px}
+.toc a{display:flex;gap:10px;align-items:baseline;color:var(--ink);text-decoration:none;font-size:.88rem;padding:7px 0;border-top:1px dashed var(--line)}
+.toc a:first-of-type{border-top:none}
+.toc a .n{font-family:'Shippori Mincho B1',serif;color:var(--red);font-weight:800;min-width:34px}
+.toc a .s{color:var(--ink2);font-size:.74rem;margin-left:auto;text-align:right}
+.ex{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:13px 16px;margin:14px 0}
+.ex .c{font-size:1.08rem;font-weight:700;line-height:1.7}
+.ex .p{font-size:.8rem;color:var(--blue)}
+.ex .j{font-size:.8rem;color:var(--ink2)}
+.ex .note{font-size:.76rem;color:var(--ink2);border-top:1px dashed var(--line);margin-top:8px;padding-top:8px}
+.tip{border-left:4px solid var(--blue);background:var(--blue-soft);border-radius:0 12px 12px 0;padding:12px 16px;margin:16px 0;font-size:.86rem}
+.tip b:first-child{color:var(--blue)}
+.warn{border-left:4px solid var(--red);background:var(--red-soft);border-radius:0 12px 12px 0;padding:12px 16px;margin:16px 0;font-size:.86rem}
+.warn b:first-child{color:var(--red)}
+table{width:100%;border-collapse:collapse;margin:14px 0;font-size:.84rem;background:var(--card);border-radius:12px;overflow:hidden}
+th{background:var(--mask);font-weight:700;text-align:left;padding:9px 12px;font-size:.78rem;letter-spacing:.04em}
+td{padding:9px 12px;border-top:1px solid var(--line);vertical-align:top}
+td.zh,th.zh{font-family:'Noto Serif SC',serif}
+.py{color:var(--blue);font-size:.86em}
+ul,ol{margin:0 0 14px 22px;font-size:.92rem}
+li{margin-bottom:6px}
+.totop{display:block;text-align:right;font-size:.74rem;color:var(--ink2);text-decoration:none;margin-top:18px}
+footer{margin-top:60px;padding-top:16px;border-top:1px solid var(--line);font-size:.74rem;color:var(--ink2);text-align:center}
+
+@media print{
+  body{background:#fff;color:#000}
+  main{max-width:100%;padding:0}
+  .cover,.toc,.ex,table{border-color:#999}
+  h2{page-break-before:always;margin-top:10mm}
+  h2:first-of-type{page-break-before:avoid}
+  .totop{display:none}
+  a{color:inherit;text-decoration:none}
+}
+</style>
+</head>
+<body>
+<main id="top">
+
+<div class="cover">
+  <div class="series">耳から中国語 ── 別冊テキスト</div>
+  <h1>音から始める、<br>1年間の中国語の地図。</h1>
+  <p>アプリ(ドリル)が「体で覚える」担当なら、このテキストは「頭で腑に落とす」担当です。練習していて「なぜ?」と思ったとき、フェーズが切り替わるとき、伸び悩んだときに開いてください。全8章+付録。各章の冒頭に、対応するアプリのタブを示しています。</p>
+</div>
+
+<div class="toc">
+  <div class="t">目次</div>
+  <a href="#ch0"><span class="n">序章</span>この教材キットの使い方<span class="s">設計思想と90分ルーティン</span></a>
+  <a href="#ch1"><span class="n">第1章</span>発音 ── 音の土台を作る<span class="s">聴く・話す(音読)</span></a>
+  <a href="#ch2"><span class="n">第2章</span>文法ミニマム<span class="s">話す(瞬間作文)</span></a>
+  <a href="#ch3"><span class="n">第3章</span>リスニングの科学<span class="s">聴く(精聴)</span></a>
+  <a href="#ch4"><span class="n">第4章</span>語彙 ── 漢字力の正しい使い方<span class="s">単語・読む</span></a>
+  <a href="#ch5"><span class="n">第5章</span>数字・お金・日時の聞き取り<span class="s">実戦の最重要スキル</span></a>
+  <a href="#ch6"><span class="n">第6章</span>仕事で使う中国語<span class="s">書く・話す(AI)</span></a>
+  <a href="#ch7"><span class="n">第7章</span>12ヶ月の歩き方<span class="s">週間プランと挫折対策</span></a>
+  <a href="#ap"><span class="n">付録</span>リファレンス早見表<span class="s">迷ったらここ</span></a>
+</div>
+
+<!-- ================================================== -->
+<h2 id="ch0"><span class="chnum"><span>序</span></span>この教材キットの使い方</h2>
+<div class="ch-app">アプリ全体と対応</div>
+
+<p>この教材キットの設計思想はひとつだけです。<em>「読めるのに聞けない・話せない」を作らない</em>こと。日本人は漢字が読める分、目からの学習に逃げやすく、その結果「文章は読めるのに会議では一言もわからない」という典型的な失敗パターンに陥ります。だからこのキットは、すべての練習を「音」から始める順番に組んであります。</p>
+
+<p>役割分担はシンプルです。<strong>アプリは筋トレ、テキストは解剖学</strong>。アプリで毎日反復し、つまずいたらテキストの該当章を読んで理屈を確認する。理屈がわかると反復の効率が一気に上がります。逆に、テキストだけ読んで練習しないのが一番もったいない使い方です。</p>
+
+<h3>1日90分の基本ルーティン</h3>
+<table>
+<tr><th>時間帯</th><th>メニュー</th><th>使うもの</th></tr>
+<tr><td>朝 15分</td><td>単語カード(音→意味モード)</td><td>アプリ「単語」</td></tr>
+<tr><td>隙間 30分</td><td>精聴済み対話の聞き流し+読解1本</td><td>アプリ「聴く」「読む」</td></tr>
+<tr><td>夜 20分</td><td>精聴サイクル(新しい対話1本)</td><td>アプリ「聴く」+第3章</td></tr>
+<tr><td>夜 25分</td><td>瞬間作文 → AI会話 or AI添削</td><td>アプリ「話す」「書く」</td></tr>
+</table>
+
+<p>90分連続で取る必要はありません。むしろ<strong>分割したほうが記憶には有利</strong>です(分散効果)。通勤・昼休み・寝る前に散らしてください。1日2時間取れる日は、増えた30分をそのときのフェーズの中心練習(序盤なら発音、中盤なら精聴)に足すのが最も効率的です。</p>
+
+<div class="tip"><b>テキストの読み方:</b>最初に通読するなら序章→第1章→第3章→第7章の順で十分です。第2章(文法)と第5章(数字)は、アプリの該当ドリルでつまずいたときに辞書的に引いてください。第6章は3ヶ月目以降、実戦投入が見えてきたら読むのがちょうどいいタイミングです。</div>
+
+<a class="totop" href="#top">↑ 目次へ</a>
+
+<!-- ================================================== -->
+<h2 id="ch1"><span class="chnum"><span>一</span></span>発音 ── 音の土台を作る</h2>
+<div class="ch-app">アプリ対応:聴く(声調クイズ・聞き分け)/ 話す(音読)</div>
+
+<p>発音を最初の2ヶ月で徹底的にやる理由は2つあります。第一に、<em>自分で正しく出せる音は聞き取れるようになる</em>から。発音練習はそのままリスニングの土台工事です。第二に、変な癖は後から直すほうが何倍も大変だから。ここは「なんとなく通じる」で先に進まず、仕組みから理解してください。</p>
+
+<h3>1-1 四声は「高さ」ではなく「変化の形」</h3>
+
+<p>まず大前提として、声調は音の高さの絶対値ではなく、<strong>音の高さが動く「形」</strong>です。声が高い人も低い人も、自分の声域の中で上下の幅を大きく取れば通じます。日本語は高低の幅が狭い言語なので、日本人の中国語は総じて「平ら」に聞こえがちです。<em>自分で「大げさすぎるかな」と感じるくらいでちょうどいい</em>、と覚えてください。</p>
+
+<table>
+<tr><th>声調</th><th>形</th><th>日本語での身体感覚</th></tr>
+<tr><td><strong>第1声</strong> ˉ</td><td>高く・平ら</td><td>救急車の「ピー」。思っているより高い位置で、まっすぐ伸ばす。途中で下げない</td></tr>
+<tr><td><strong>第2声</strong> ˊ</td><td>低→高へ一気に</td><td>聞き返すときの「えっ?」。ゆっくり上げると3声に化けるので、短く鋭く</td></tr>
+<tr><td><strong>第3声</strong> ˇ</td><td>低く抑える</td><td>がっかりした「あ〜ぁ」の前半。本体は「低さ」で、後半の上がりはおまけ(次項)</td></tr>
+<tr><td><strong>第4声</strong> ˋ</td><td>高→低へ一気に</td><td>「よしっ!」と言い切る感じ。カラスの「カァ」。落とし切るのがコツ</td></tr>
+<tr><td><strong>軽声</strong> ・</td><td>短く・軽く</td><td>前の音節に「ポンと添える」。強く読んだ時点で軽声ではなくなる</td></tr>
+</table>
+
+<div class="warn"><b>3声の最重要ポイント:</b>教科書の図(下がって上がるV字)を忠実に再現しようとすると、不自然に間延びします。実際の会話では、3声の後ろに別の音節が続く場合、<em>低く抑えたまま上がらずに終わる</em>「半3声」がほとんどです(例:老师 lǎoshī の「lǎo」は低いまま)。「3声=低い声」とインプットし直すと、発音もリスニングも一気に楽になります。</div>
+
+<h3>1-2 変調 ── 表記と実際の音がずれる4つのルール</h3>
+
+<p>ピンインの表記どおりに読まない場所が4つだけあります。ここを知らないと「表記は合っているのに聞こえてくる音と違う」という混乱が起きます。</p>
+
+<table>
+<tr><th>ルール</th><th>内容</th><th>例</th></tr>
+<tr><td>① 3声+3声</td><td>前の3声が<strong>2声</strong>に変わる(表記は3声のまま)</td><td class="zh">你好 nǐ hǎo → <span class="py">実際は ní hǎo</span></td></tr>
+<tr><td>② 半3声</td><td>3声の後ろに1・2・4声・軽声が来ると、上がらず低いまま</td><td class="zh">老师 lǎoshī / 很忙 hěn máng</td></tr>
+<tr><td>③ 不 bù</td><td>4声の前では<strong>bú</strong>(2声)になる</td><td class="zh">不是 bú shì / 不去 bú qù</td></tr>
+<tr><td>④ 一 yī</td><td>4声の前では<strong>yí</strong>、1・2・3声の前では<strong>yì</strong>。単独・順序では yī のまま</td><td class="zh">一个 yí ge / 一杯 yì bēi / 第一 dì-yī</td></tr>
+</table>
+
+<p>アプリの声調表で「3声+3声」の欄に注記が付いているのはこのためです。クイズの出題からは外してあるので、音読で体に入れてください。</p>
+
+<h3>1-3 日本人が苦手な子音 ── 口の作り方</h3>
+
+<h4>そり舌音 zh・ch・sh・r(最重要)</h4>
+<p>舌先を、上の歯茎よりさらに奥(口の天井が硬い部分の手前)に<strong>反らせて近づけ</strong>ます。「ジ・チ・シ」の口のまま、舌先だけを天井方向に持ち上げるイメージです。こもった、少し暗い響きになれば正解。r は英語の r より摩擦が強く、「り」を喉の奥で言うような音です。</p>
+
+<h4>j・q・x と z・c・s との三つ巴</h4>
+<p>j・q・x は日本語の「ジ・チ・シ」でほぼ通じます(口を横に引く)。z・c・s は舌先を<strong>上の前歯の裏</strong>に当てる「ツ」の位置。つまり日本人にとっての課題は、この2グループと、そり舌グループの<em>3系統を混ぜないこと</em>に尽きます。アプリの聞き分けクイズ(そり舌⇔ジ・チ系/そり舌⇔平舌)は、まさにこの3系統の耳を作るためのものです。</p>
+
+<h4>有気音と無気音 ── 濁音・清音ではない</h4>
+<p>b/d/g は「バ・ダ・ガ」という濁音ではなく、<strong>息を出さない清音</strong>です。p/t/k はその逆で、ティッシュが揺れるくらい強く息を破裂させます。日本語の清濁の区別とは仕組みが違うので、手のひらを口の前にかざして<em>息の量</em>でセルフチェックしてください。日本語話者の「だいじょうぶ」の「だ」の感覚で d を出すと、中国人には t 寄りに聞こえることがあります。</p>
+
+<h4>-n と -ng ── 「案内」と「案外」</h4>
+<p>これは実は日本語に両方ある音です。「あん<strong>な</strong>い」のンは舌先が歯茎につく <strong>-n</strong>、「あん<strong>が</strong>い」のンは舌がどこにもつかず鼻に抜ける <strong>-ng</strong>。判定法として、語尾に小さく母音を足してみてください。fàn(ご飯)は「ファンヌ」と舌がつき、fàng(置く)は「ファン(グ)」と喉の奥が開きます。</p>
+
+<h3>1-4 母音とピンイン表記の罠</h3>
+
+<table>
+<tr><th>罠</th><th>正体</th><th>例</th></tr>
+<tr><td>ü</td><td>「イ」の口の形のまま「ウ」。口笛の口</td><td class="zh">女 nǚ / 绿 lǜ</td></tr>
+<tr><td>yu / ju / qu / xu の u</td><td>実は全部 <strong>ü</strong>(j・q・x・y の後では点々を省略するルール)</td><td class="zh">去 qù / 语 yǔ</td></tr>
+<tr><td>e</td><td>「エ」ではない。喉の奥の「ウ」と「オ」の間の曖昧な音</td><td class="zh">喝 hē / 饿 è</td></tr>
+<tr><td>-ian</td><td>「イアン」ではなく「<strong>イエン</strong>」</td><td class="zh">天 tiān / 见 jiàn</td></tr>
+<tr><td>iu(=iou の省略)</td><td>「イウ」ではなく「イォウ」に近い</td><td class="zh">六 liù / 九 jiǔ</td></tr>
+<tr><td>ui(=uei の省略)</td><td>「ウイ」ではなく「ウェイ」</td><td class="zh">对 duì / 水 shuǐ</td></tr>
+<tr><td>un(=uen の省略)</td><td>「ウン」ではなく「ウェン」に近い</td><td class="zh">春 chūn / 婚 hūn</td></tr>
+</table>
+
+<div class="tip"><b>練習の順番:</b>①この章を読む → ②アプリ「話す>音読」で20パターンをお手本→まね、で1周 → ③「聴く>聞き分け」で耳のチェック → ④週1回、オンラインレッスンでネイティブに矯正してもらう。機械音声はあくまで補助輪で、最終判定は人間に。講師には <span class="zh">请纠正我的发音。Qǐng jiūzhèng wǒ de fāyīn.(発音を直してください)</span>と最初に伝えれば十分です。</div>
+
+<a class="totop" href="#top">↑ 目次へ</a>
+
+<!-- ================================================== -->
+<h2 id="ch2"><span class="chnum"><span>二</span></span>文法ミニマム</h2>
+<div class="ch-app">アプリ対応:話す(瞬間作文)── ドリルの背景にある理屈</div>
+
+<p>中国語の文法は、覚えることの総量では英語よりずっと少ない言語です。動詞の活用がなく、時制変化がなく、単複もありません。そのかわり<em>語順がすべての仕事をする</em>ので、「並べ方の感覚」を瞬間作文で体に入れるのがこの教材の方針です。この章では、ドリル10項目の背景にある考え方だけを整理します。</p>
+
+<h3>2-1 三原則 ── これだけで骨格は立つ</h3>
+<ol>
+<li><strong>語順は「主語+動詞+目的語」</strong>。日本語と違い、動詞が目的語の前に来ます(我 吃 饭)。</li>
+<li><strong>動詞は一切活用しない</strong>。過去・完了・進行・経験は、了・在・过などの助詞と時間詞(昨天・已经…)で表します。</li>
+<li><strong>修飾語は前から</strong>。「私の・赤い・新しい椅子」のように、飾る言葉は必ず名詞の前(我的新椅子)。「的」が日本語の「の」に近い接着剤です。</li>
+</ol>
+
+<h3>2-2 「了」── 過去形ではない</h3>
+<p>日本人が最初に混乱するのが「了」です。結論からいうと、<em>了は過去形の印ではなく、「完了」と「変化」の印</em>です。</p>
+<div class="ex">
+<div class="c zh">① 我喝了两瓶啤酒。</div><div class="p">Wǒ hē le liǎng píng píjiǔ.</div><div class="j">ビールを2本飲んだ。(動詞+了=動作の完了)</div>
+<div class="note">動詞の直後の了。「飲む」という動作が完結したことを示す。目的語に「两瓶」のような具体性があると安定します。</div>
+</div>
+<div class="ex">
+<div class="c zh">② 下雨了。/ 太贵了。</div><div class="p">Xià yǔ le. / Tài guì le.</div><div class="j">雨が降ってきた。/ 高すぎる(という状態だ)。(文末の了=変化・新事態)</div>
+<div class="note">文末の了。「前と状況が変わった」「新しい事態が発生した」ことを聞き手に伝えるニュアンス。</div>
+</div>
+<div class="ex">
+<div class="c zh">③ 我学了一年汉语了。</div><div class="p">Wǒ xué le yì nián Hànyǔ le.</div><div class="j">中国語を1年勉強している(今も継続中)。</div>
+<div class="note">①と②の合わせ技。動詞後の了で「1年やった」、文末の了で「そして今も続いている」。</div>
+</div>
+<p>そして重要な逆ルールが2つ。<strong>否定は「没」を使い、了は消える</strong>(我没喝啤酒)。また、「毎朝コーヒーを飲む」のような<strong>習慣には了を使いません</strong>(我每天喝咖啡)。「過去の話=了」と機械的に置くのが一番多いミスです。</p>
+
+<h3>2-3 補語 ── 中国語の心臓部</h3>
+<p>日本語の「〜し終える」「〜できる」「聞き取れる」にあたる表現を、中国語は<strong>動詞の後ろに結果や方向をくっつける</strong>方式で作ります。これが補語で、会話の情報量の半分はここに乗っていると言っても大げさではありません。アプリの瞬間作文③〜⑤がこの練習です。</p>
+<table>
+<tr><th>種類</th><th>形</th><th>例</th></tr>
+<tr><td>結果補語</td><td>動詞+結果</td><td class="zh">听<strong>懂</strong>(聞いて理解する)/ 写<strong>完</strong>(書き終える)/ 找<strong>到</strong>(探し当てる)/ 准备<strong>好</strong>(準備し終える)</td></tr>
+<tr><td>方向補語</td><td>動詞+来/去 など</td><td class="zh">进<strong>来</strong>(入ってくる)/ 带<strong>回去</strong>(持ち帰る)/ 站<strong>起来</strong>(立ち上がる)/ 想<strong>起来</strong>(思い出す)</td></tr>
+<tr><td>可能補語</td><td>動詞+<strong>得/不</strong>+補語</td><td class="zh">听<strong>得</strong>懂(聞き取れる)/ 听<strong>不</strong>懂(聞き取れない)/ 做<strong>不</strong>完(やり終えられない)/ 买<strong>不</strong>起(高くて買えない)</td></tr>
+<tr><td>様態補語</td><td>動詞+得+評価</td><td class="zh">说得很好(話すのが上手)/ 过得怎么样?(過ごし具合はどう?)</td></tr>
+</table>
+<div class="tip"><b>コツ:</b>補語は文法として暗記するより、<em>「听懂」「听不懂」「做完」「做不完」をそれぞれ1つの単語として</em>音で覚えてしまうのが早道です。可能補語は「能+動詞」よりも会話で圧倒的によく使われます。「わかりません」は 我不懂 より <span class="zh">我听不懂</span>(聞き取れない)/<span class="zh">我看不懂</span>(読んでもわからない)と言い分けられると一気に自然になります。</div>
+
+<h3>2-4 把構文 ── 「〜を、どうにかする」</h3>
+<p>把は目的語を動詞の前に引っ張り出して、<strong>「その物をどう処置したか」</strong>を言う構文です(请<span class="zh">把资料发给我</span>=資料を私に送って)。使う条件は2つで、①対象が特定のモノであること、②動詞の後ろに結果や方向(给我・完・在〜)が付くこと。逆にいうと、動詞を裸のまま「把门关」とは言えず、必ず「把门关<strong>上</strong>」のように何か付きます。仕事の依頼表現はほぼ把構文で回るので、瞬間作文⑦をそのまま暗唱するのが実用的です。</p>
+
+<h3>2-5 疑問文は4パターンだけ</h3>
+<table>
+<tr><th>型</th><th>作り方</th><th>例</th></tr>
+<tr><td>吗 疑問</td><td>文末に吗</td><td class="zh">你是日本人吗?</td></tr>
+<tr><td>反復疑問</td><td>動詞・形容詞を「A不A」</td><td class="zh">你去不去? / 能不能改一下?</td></tr>
+<tr><td>疑問詞疑問</td><td>聞きたい場所に疑問詞を置くだけ(語順は変えない)</td><td class="zh">你什么时候来?(いつ来る?)</td></tr>
+<tr><td>呢 疑問</td><td>「〜は?」と話題を振り返す</td><td class="zh">我很好,你呢?</td></tr>
+</table>
+<p>英語のように語順をひっくり返す操作が一切ないのが中国語のやさしいところです。疑問詞(什么・谁・哪里・什么时候・怎么・为什么・多少)は、答えが入る場所にそのまま置きます。</p>
+
+<h3>2-6 量詞はまず10個</h3>
+<p>「一つの、一枚の」にあたる量詞は数十種ありますが、日常会話は10個で回ります。迷ったら万能の「个」でOK。間違えても必ず通じるので、萎縮しないことのほうが大事です。</p>
+<table>
+<tr><th class="zh">量詞</th><th>使う対象</th><th>例</th></tr>
+<tr><td class="zh">个 ge</td><td>万能(人・物・抽象)</td><td class="zh">一个人 / 一个问题</td></tr>
+<tr><td class="zh">件 jiàn</td><td>用件・服</td><td class="zh">一件事 / 一件衣服</td></tr>
+<tr><td class="zh">张 zhāng</td><td>平らな物</td><td class="zh">一张纸 / 一张桌子</td></tr>
+<tr><td class="zh">本 běn</td><td>書籍類</td><td class="zh">一本书</td></tr>
+<tr><td class="zh">杯 bēi / 瓶 píng</td><td>飲み物</td><td class="zh">一杯咖啡 / 两瓶啤酒</td></tr>
+<tr><td class="zh">条 tiáo</td><td>細長い物</td><td class="zh">一条鱼 / 一条路</td></tr>
+<tr><td class="zh">次 cì</td><td>回数</td><td class="zh">去过两次</td></tr>
+<tr><td class="zh">位 wèi</td><td>人(敬意)</td><td class="zh">一位客户</td></tr>
+<tr><td class="zh">块 kuài</td><td>お金・かたまり</td><td class="zh">三块钱</td></tr>
+</table>
+
+<a class="totop" href="#top">↑ 目次へ</a>
+
+<!-- ================================================== -->
+<h2 id="ch3"><span class="chnum"><span>三</span></span>リスニングの科学</h2>
+<div class="ch-app">アプリ対応:聴く(精聴対話)── 20分サイクルの完全解説</div>
+
+<h3>3-1 「聞き取れない」の正体は3つしかない</h3>
+<p>リスニング力は、次の3つの掛け算で決まります。つまずいたときは、どの要因なのかを切り分けるのが上達の近道です。</p>
+<ol>
+<li><strong>耳の語彙量</strong> ── その単語を「音で」知っているか。目で知っているだけの単語は、聞いた瞬間には出てきません。日本人のつまずきの<em>7割はここ</em>です。</li>
+<li><strong>音の解像度</strong> ── 声調・子音・-n/-ng を聞き分けられるか。第1章の土台がそのまま効きます。</li>
+<li><strong>処理速度</strong> ── 意味を組み立てる速さが音声のスピードに追いつくか。これは量(多聴)と速度訓練で伸びます。</li>
+</ol>
+
+<h3>3-2 精聴サイクル ── 各ステップの「なぜ」</h3>
+<p>アプリの精聴対話に組み込んだ20分サイクルを、目的つきで解説します。</p>
+<table>
+<tr><th>手順</th><th>やること</th><th>目的</th></tr>
+<tr><td>① 推測</td><td>表示オフのまま2〜3回聞く</td><td>「何がわからないか」を自覚する。全部わかったらその教材は卒業</td></tr>
+<tr><td>② 書き出し</td><td>聞き取れた部分をメモ(漢字でもピンインでも)</td><td>曖昧に「だいたいわかった」で流すのを防ぐ。書けない=聞けていない</td></tr>
+<tr><td>③ 答え合わせ</td><td>「漢字」を表示して照合し、聞き取れなかった語を<strong>2種類に仕分け</strong></td><td>(a)そもそも知らない語 → 単語帳へ。(b)<em>知っているのに聞こえなかった語 → ここが宝の山</em>。音と知識が未接続の証拠なので、5回音読して接続する</td></tr>
+<tr><td>④ 口を使う</td><td>見ながら聞く → 同時読み(オーバーラッピング)→ 何も見ずに影のように追う(シャドーイング)</td><td>音を「自分で出せる音」に変換する。出せる音は次から聞こえる</td></tr>
+<tr><td>⑤ 仕上げ</td><td>表示オフで通しで聞く</td><td>全部聞き取れたら合格。翌日以降の「聞き流し素材」に昇格させる</td></tr>
+</table>
+
+<div class="warn"><b>よくある失敗:</b>③で仕分けをせず、スクリプトを読んで「なるほど」で終えてしまうこと。読んで理解するのはリーディングの練習であって、リスニングは1ミリも伸びていません。必ず④に進んで、音を口に通してください。</div>
+
+<h3>3-3 多聴 ── 「聞き流し」が効く唯一の条件</h3>
+<p>聞き流しは、<em>内容の7〜8割が理解できる素材に限って</em>効果があります。わからない音声を何時間浴びても、脳はノイズとして処理するだけです。だからこの教材では、精聴で「合格」した対話を聞き流し素材に回す設計にしています。すでに理解できる音声を繰り返し聞くのは退屈に感じるかもしれませんが、処理速度(要因③)を上げるのはまさにこの反復です。</p>
+
+<h3>3-4 速度訓練 ── 1.25倍速の使いどころ</h3>
+<p>ネイティブの自然な会話は、教材音声よりかなり速く感じます。対策は単純で、<strong>すでに内容を知っている音声を速くして聞く</strong>こと。アプリのヘッダーで速度を変えられるので、精聴合格済みの対話を 1.0x → 1.15x → 1.25x と上げていってください。1.25xが平気になると、実際の会議の中国語が「思ったより遅い」と感じられるようになります。初見の教材を速くするのは逆効果なので、順番だけ守ってください。</p>
+
+<div class="tip"><b>仕事を教材にする:</b>Phase 3以降、WeChatで届く音声メッセージ(语音)は最高の生きた精聴素材です。まず自力で聞き、わからなければ<span class="zh">「不好意思,能不能发文字?」(すみません、文字で送ってもらえますか?)</span>とお願いして答え合わせをする。この1往復自体が立派な実戦です。</div>
+
+<a class="totop" href="#top">↑ 目次へ</a>
+
+<!-- ================================================== -->
+<h2 id="ch4"><span class="chnum"><span>四</span></span>語彙 ── 漢字力の正しい使い方</h2>
+<div class="ch-app">アプリ対応:単語(音→意味モード)/ 読む(簡体字・罠単語)</div>
+
+<h3>4-1 日本人の最強の武器と、最大の落とし穴</h3>
+<p>日本語ネイティブは、中国語の語彙の6〜7割を「見れば意味が推測できる」状態からスタートします。これは英語話者が数年かけて到達するレベルで、圧倒的なアドバンテージです。ただしこの武器には裏面があります。<em>「見てわかる」と「聞いてわかる・言える」はまったく別の能力</em>だということです。</p>
+<p>たとえば「重要」という単語。見れば0秒でわかりますが、耳で zhòngyào と聞いて反応できるか、自分の口で第4声+第4声で言えるかは、練習しない限り永遠にゼロのままです。だからアプリの単語カードは「音→意味」モードが基本設定です。<strong>新しい単語は必ず音から入り、漢字は最後に確認する</strong>。この順番さえ守れば、漢字力は純粋なボーナスとして働きます。</p>
+
+<h3>4-2 罠単語 ── 同じ字で意味が違う</h3>
+<p>漢字が読めるゆえに、日本語の意味のまま誤読する単語群があります(手纸=トイレットペーパー、勉强=無理強い、など)。アプリ「読む>罠単語」に主要18語を収録してあります。これらは<em>間違えたときのインパクトで覚える</em>のが一番速いので、暗記しようとせず、クイズ感覚で意味を予想してから開いてください。実務では「大丈夫」「勉強」「検討」あたりを日本語の感覚で直訳しないよう注意が必要です(「検討します」のつもりで<span class="zh">检讨</span>と言うと「反省します」になります)。</p>
+
+<h3>4-3 簡体字は「変換パターン」で2週間</h3>
+<p>簡体字は約2,200字ありますが、ゼロから覚えるものではなく、<strong>日本の漢字からの変換パターン</strong>として覚えるものです。パターンは大きく3種類。</p>
+<ul>
+<li><strong>部品の置き換え</strong>:言→讠(语・说)、金→钅(银・钱)、糸→纟(红・给)、門→门(问・间)。部品を1つ覚えると数十字が一気に読めます。</li>
+<li><strong>草書由来の簡略化</strong>:書→书、東→东、車→车、馬→马。形は違いますが、崩し字だと思えば納得できるものが多いです。</li>
+<li><strong>大胆な省略</strong>:広→广、飛→飞、廠→厂。少数派なので個別に。</li>
+</ul>
+<p>アプリの簡体字ドリル28字は、頻度の高い代表字です。読解パッセージを読んでいれば自然に定着するので、専用の学習時間はほぼ不要。「2週間で慣れる」というのはこの仕組みのおかげです。なお<strong>書けるようになる必要はありません</strong>。ライティングはピンイン入力で変換するので、必要なのは「読める+ピンインが言える」の2点だけです。</p>
+
+<h3>4-4 語彙の広げ方 ── HSK基準で1,200語</h3>
+<p>日常会話の当面のゴールはHSK4級相当の約1,200語です。アプリの200語はその中核+仕事語彙なので、3ヶ月目以降は市販のHSK単語帳やAnki(音声つきデッキ)で残りを積んでください。選ぶ基準はただ1つ、<em>音声がついていること</em>。そして覚える手順は常に「音を聞く→意味を思い出す→声に出す→最後に字を見る」です。</p>
+
+<a class="totop" href="#top">↑ 目次へ</a>
+
+<!-- ================================================== -->
+<h2 id="ch5"><span class="chnum"><span>五</span></span>数字・お金・日時の聞き取り</h2>
+<div class="ch-app">実戦の最重要スキル ── 精聴05「値段交渉」とセットで</div>
+
+<p>ビジネスで中国語を使うとき、聞き間違いが実害に直結するのは数字です。金額・日付・時刻は「だいたい」が許されない領域なので、独立した章にしました。仕組みは単純ですが、日本語と発想が違う点が3つあります。</p>
+
+<h3>5-1 「二」と「两」の使い分け</h3>
+<p>数字の2には読み方が2つあります。<strong>番号や数の読み上げは 二 èr、量詞の前(=個数)は 两 liǎng</strong>。「2人」は 两个人、「2時」は 两点、「200」は 两百(二百も可)。電話番号やルーム番号の2は必ず èr です。聞き取りでは「リャン」と聞こえたら個数の2だと反射できるようにしておきましょう。</p>
+
+<h3>5-2 桁の省略 ── 「两百八」は280</h3>
+<p>口語では、キリのいい数字の<strong>最後の桁を省略</strong>します。両百八(liǎngbǎi bā)は288ではなく<strong>280</strong>。一千二は<strong>1,200</strong>。「直前に言った位のひとつ下の位」を意味するルールです。逆に間に0を挟む場合は 零 を必ず入れます:一百零八=108、一千零五十=1,050。値段交渉の聞き取りはほぼこのルールの運用です。</p>
+<div class="ex">
+<div class="c zh">三百五。/ 三百零五。/ 三百五十五。</div>
+<div class="p">sānbǎi wǔ / sānbǎi líng wǔ / sānbǎi wǔshíwǔ</div>
+<div class="j">350 / 305 / 355 ── この3つを聞き分けられれば合格</div>
+</div>
+
+<h3>5-3 お金・日付・時刻の型</h3>
+<table>
+<tr><th>場面</th><th>型</th><th>例</th></tr>
+<tr><td>金額</td><td>块(元)・毛(0.1元)。小数点は「块」で切る</td><td class="zh">三块五 = 3.5元 / 二十八块 = 28元</td></tr>
+<tr><td>日付</td><td>月+号(口語)/日(書面)。順序は大→小</td><td class="zh">十月三号 = 10月3日</td></tr>
+<tr><td>曜日</td><td>星期+数字(月=一…土=六)。日曜だけ 星期天/星期日</td><td class="zh">星期三 = 水曜日</td></tr>
+<tr><td>時刻</td><td>点(時)・分。半 = 30分、差〜 = 〜前</td><td class="zh">两点半 = 2:30 / 差五分三点 = 2:55</td></tr>
+<tr><td>期間</td><td>「〜時間」は 个小时、「〜日間」は 天(量詞不要)</td><td class="zh">三个小时 / 两天 / 两个星期</td></tr>
+</table>
+
+<div class="warn"><b>九折は「9割引」ではない:</b>割引表現の 折 は「掛け率」です。九折=定価の90%(10%オフ)、七五折=25%オフ。日本語の「◯割引」と真逆の発想なので、ECやセールの文脈では要注意。アプリの読解06「製品紹介文」にこの表現を仕込んであります。</div>
+
+<div class="tip"><b>訓練法:</b>アプリの精聴05「値段交渉」を1.15倍速で聞く+日常で見かける数字(レシート、時刻表)を中国語で即座に言う「数字の独り言」が効きます。数字は語彙数が少ない分、反射速度が実力のすべてです。</div>
+
+<a class="totop" href="#top">↑ 目次へ</a>
+
+<!-- ================================================== -->
+<h2 id="ch6"><span class="chnum"><span>六</span></span>仕事で使う中国語</h2>
+<div class="ch-app">アプリ対応:書く(AI添削・テンプレ)/ 話す(AI会話)</div>
+
+<h3>6-1 呼び方 ── 「さん」は存在しない</h3>
+<p>日本語の「〜さん」にあたる万能の敬称は中国語にありません。ビジネスでの基本は<strong>姓+役職</strong>です:王经理(王マネージャー)、李总(李社長 ※总=总经理の略で経営層への敬称)。役職がわからない相手や社外のフォーマルな場面では 先生(男性)/女士(女性)。同僚同士はフルネーム呼び捨てが普通で、失礼にあたりません。親しくなると 小+姓(年下へ:小王)、老+姓(年上へ親しみを込めて:老王)が使われます。迷ったら、周りがその人をどう呼んでいるかを真似るのが一番安全です。</p>
+
+<h3>6-2 WeChatの作法</h3>
+<p>中国のビジネスコミュニケーションの主戦場はメールではなくWeChat(微信)です。日本のビジネスチャットと感覚が違う点をいくつか。</p>
+<ul>
+<li><strong>音声メッセージ(语音)が多用されます</strong>。相手が忙しそうなときや長い内容は文字が無難ですが、届いた音声はリスニング教材だと思って歓迎しましょう(第3章末尾のやり方で)。</li>
+<li><strong>既読表示がありません</strong>。返事がないのは読んでいないだけのことも多く、翌日の再送(<span class="zh">在吗?</span>や用件の再掲)は日本ほど失礼ではありません。</li>
+<li>グループでは<strong>@+名前</strong>で指名してから用件を書くのが基本。全員向けのお知らせはアプリ収録の読解03「グループへのお知らせ」がそのまま型になります。</li>
+<li>スタンプ(表情包)文化が豊かで、仕事のグループでも普通に使われます。<span class="zh">收到</span>(受け取りました)+親指スタンプ、くらいの軽さでOK。</li>
+</ul>
+
+<h3>6-3 会議で生き残る「3段構え」</h3>
+<p>聞き取れない瞬間は必ず来ます。大事なのは黙ってしまわないことで、対処は3段構えで用意しておきます。</p>
+<div class="ex">
+<div class="c zh">① 不好意思,请再说一遍。</div><div class="p">Bù hǎoyìsi, qǐng zài shuō yí biàn.</div><div class="j">すみません、もう一度お願いします。(まず素直に聞き返す)</div>
+</div>
+<div class="ex">
+<div class="c zh">② 请说慢一点,我的汉语还不太好。</div><div class="p">Qǐng shuō màn yìdiǎn, wǒ de Hànyǔ hái bú tài hǎo.</div><div class="j">ゆっくりお願いします、中国語がまだ得意ではないので。(速度を下げてもらう)</div>
+</div>
+<div class="ex">
+<div class="c zh">③ 你的意思是……,对吗?</div><div class="p">Nǐ de yìsi shì......, duì ma?</div><div class="j">つまり〜ということですか?(自分の理解を差し出して確認する)</div>
+</div>
+<p>特に③は強力です。半分しか聞き取れなくても、理解した部分を返せば相手が残りを埋めてくれます。意見を言うときの型は <span class="zh">我觉得…(〜と思います)/ 我同意(賛成です)/ 我有一个问题(1つ質問があります)</span> の3つでほぼ足ります。</p>
+
+<h3>6-4 AI添削・AI会話の回し方</h3>
+<p>アプリのAI機能は、独学の弱点である「アウトプットの壁打ち相手がいない」を埋めるためのものです。効果が出る使い方には型があります。</p>
+<ul>
+<li><strong>AI添削は「2周」する</strong>。1周目で書いて添削を受けたら、解説を読んで<em>何も見ずに同じお題でもう一度書く</em>。修正が身についたかはこの2周目で決まります。返ってきた「修正版」は3回音読して、書く練習を話す練習に転用してください。</li>
+<li><strong>AI会話は「音だけ縛り」で</strong>。相手の返答をまず音声だけで聞き、わからないときだけピンイン→訳の順にタップ。返事は必ず声に出してから入力します。1セッション5往復を目安に、詰まったら <span class="zh">听不懂,请再说一遍。</span>と打つ──これ自体が上の3段構えの予行演習です。</li>
+<li>頻度は<strong>週2〜3回で十分</strong>。毎日の主食は精聴と瞬間作文、AIは週数回の実戦シミュレーションという位置づけが長続きします。</li>
+</ul>
+
+<h3>6-5 実戦投入は3ステップで</h3>
+<p>3ヶ月目あたりから、職場の中国語話者との会話に少しずつ中国語を混ぜていきます。一気にやろうとせず、段階を踏むのがコツです。</p>
+<ol>
+<li><strong>挨拶と相槌だけ中国語にする</strong>(早上好 / 辛苦了 / 收到 / 没问题)。負荷ゼロで「中国語を使う人」という認知を作ります。</li>
+<li><strong>定型の返信を中国語にする</strong>。アプリ「書く>返信テンプレ」の10本をそのまま使い、慣れたらAI添削で自作文に切り替えます。</li>
+<li><strong>音声・対面のやりとりに進む</strong>。最初に魔法の一言を伝えておくと、すべてが楽になります:<span class="zh">我在学汉语,说错了请告诉我。Wǒ zài xué Hànyǔ, shuōcuò le qǐng gàosu wǒ.(中国語を勉強中なので、間違えたら教えてください)</span>。相手は喜んで先生役になってくれるはずです。</li>
+</ol>
+
+<a class="totop" href="#top">↑ 目次へ</a>
+
+<!-- ================================================== -->
+<h2 id="ch7"><span class="chnum"><span>七</span></span>12ヶ月の歩き方</h2>
+<div class="ch-app">全体設計 ── 週間プラン・停滞対策・仕上げ</div>
+
+<h3>7-1 フェーズ別・週間プラン</h3>
+<table>
+<tr><th>フェーズ</th><th>平日(毎日90分)</th><th>週末・週単位</th></tr>
+<tr><td><strong>1〜2ヶ月</strong><br>音の土台</td><td>音読20パターン15分/声調・聞き分けクイズ15分/単語(音→意味)15分/大学の教科書の音読やり直し30分/書き取り(聞いてピンイン+声調をメモ)15分</td><td>オンラインレッスン週1(発音矯正専門)。この時期は文法より発音の宿題を出してもらう</td></tr>
+<tr><td><strong>3〜5ヶ月</strong><br>語彙と瞬間作文</td><td>単語15分/精聴サイクル20分/瞬間作文25分/聞き流し+読解30分</td><td>レッスン週2〜3(瞬間作文の実演+発音チェック)。罠単語・簡体字ドリルを各1周</td></tr>
+<tr><td><strong>6〜9ヶ月</strong><br>実戦投入</td><td>精聴20分(Lv2〜3、速度1.0x)/AI会話または瞬間作文25分/読解・仕事の中国語を読む30分/単語15分</td><td>レッスンはフリートーク中心に切替。AI添削週2本。職場での中国語ステップ①→②→③</td></tr>
+<tr><td><strong>10〜12ヶ月</strong><br>仕上げ</td><td>精聴済み対話を1.15〜1.25xで20分/AI会話毎日1セッション/HSK4級の過去問・弱点補強40分</td><td>HSK4級受験。仕事の雑談・簡単な報告を中国語で実施</td></tr>
+</table>
+
+<h3>7-2 オンラインレッスンを「矯正装置」として使う</h3>
+<p>独学教材(このキット含む)の唯一の穴は、あなたの発音と作文の<em>誤りをリアルタイムで検出できない</em>ことです。そこだけを人間に外注する、と考えるとレッスンの使い方が明確になります。初回に伝える3フレーズを用意しました。</p>
+<div class="ex">
+<div class="c zh">请纠正我的发音,特别是声调。</div><div class="p">Qǐng jiūzhèng wǒ de fāyīn, tèbié shì shēngdiào.</div><div class="j">発音、特に声調を直してください。</div>
+</div>
+<div class="ex">
+<div class="c zh">我们今天多练习口语吧。</div><div class="p">Wǒmen jīntiān duō liànxí kǒuyǔ ba.</div><div class="j">今日は口頭練習を多めにしましょう。</div>
+</div>
+<div class="ex">
+<div class="c zh">这个用中文怎么说?</div><div class="p">Zhège yòng Zhōngwén zěnme shuō?</div><div class="j">これは中国語で何と言いますか?(レッスン中の万能フレーズ)</div>
+</div>
+
+<h3>7-3 4〜6ヶ月目の「停滞」は仕様</h3>
+<p>ほぼ全員が、4〜6ヶ月目に「伸びている実感がない」時期を通ります。原因は実力の停滞ではなく、<strong>測り方の変化</strong>です。序盤は「言えるフレーズが増える」という見えやすい伸び方をしますが、中盤の伸びは「聞こえる瞬間が増える」という見えにくい形に変わります。対策は記録です:精聴の合格本数、AI会話の往復数、書き取りの正答率──数字にすると、体感ゼロでもグラフは右肩上がりになっているのが普通です。もう1つの処方箋は、1〜2ヶ月前の教材に戻ってみること。「こんなに簡単だったっけ」という感覚が、最も正確な実力計です。</p>
+
+<h3>7-4 HSK4級で仕上げる</h3>
+<p>日常会話レベルの客観的な到達証明として、12ヶ月目にHSK4級(語彙約1,200語、リスニング・読解・作文の3セクション)を置きます。合格の目安は総得点の6割です。試験対策としては、10ヶ月目から過去問形式の聴力パートを週1セット解くだけで十分──このカリキュラム自体がHSK4級の能力構成に沿っているためです。なお試験の実施形式は改訂されることがあるので、申し込み前に公式サイトで最新情報を確認してください。</p>
+
+<h3>7-5 実戦投入チェックリスト</h3>
+<p>「日常会話ができる」の中身を、確認できる形に分解しておきます。12ヶ月後、これが8割チェックできていればゴールです。</p>
+<ul>
+<li>初対面の中国語話者と、自己紹介+仕事内容+学習歴の話が3分続けられる</li>
+<li>WeChatの音声メッセージ(30秒程度)を、1〜2回の再生で用件が取れる</li>
+<li>会議の日程調整・資料の依頼・遅刻の連絡を、テンプレを見ずに書ける</li>
+<li>値段・日付・時刻を一発で聞き取れる(两百八=280 が反射でわかる)</li>
+<li>聞き取れなかったとき、黙らずに3段構え(第6章)で切り返せる</li>
+<li>仕事で届いた中国語の短い文書を、翻訳を見る前に大意が取れる</li>
+</ul>
+
+<a class="totop" href="#top">↑ 目次へ</a>
+
+<!-- ================================================== -->
+<h2 id="ap"><span class="chnum"><span>付</span></span>リファレンス早見表</h2>
+<div class="ch-app">迷ったらここに戻る</div>
+
+<h3>変調4ルール</h3>
+<table>
+<tr><td>3声+3声</td><td>前が2声に(<span class="zh">你好→ní hǎo</span>)</td></tr>
+<tr><td>半3声</td><td>3声+他の声調 → 低いまま上げない</td></tr>
+<tr><td class="zh">不</td><td>4声の前で bú(<span class="zh">不是 bú shì</span>)</td></tr>
+<tr><td class="zh">一</td><td>4声の前で yí / 1・2・3声の前で yì / 単独・順序は yī</td></tr>
+</table>
+
+<h3>疑問詞</h3>
+<table>
+<tr><th class="zh">疑問詞</th><th>意味</th><th>例</th></tr>
+<tr><td class="zh">什么 shénme</td><td>何</td><td class="zh">这是什么?</td></tr>
+<tr><td class="zh">谁 shéi</td><td>誰</td><td class="zh">他是谁?</td></tr>
+<tr><td class="zh">哪里/哪儿 nǎlǐ/nǎr</td><td>どこ</td><td class="zh">厕所在哪儿?</td></tr>
+<tr><td class="zh">什么时候 shénme shíhou</td><td>いつ</td><td class="zh">你什么时候来?</td></tr>
+<tr><td class="zh">怎么 zěnme</td><td>どうやって/どうして</td><td class="zh">怎么走?</td></tr>
+<tr><td class="zh">为什么 wèishénme</td><td>なぜ</td><td class="zh">为什么不行?</td></tr>
+<tr><td class="zh">多少/几 duōshao/jǐ</td><td>いくつ(几は10未満の想定)</td><td class="zh">多少钱? / 几点?</td></tr>
+</table>
+
+<h3>方位詞(場所の言い方)</h3>
+<p>名詞+方位詞+<span class="zh">边 biān / 面 miàn</span> の形で使います:<span class="zh">桌子上面(机の上)/ 车站前面(駅前)/ 公司里面(会社の中)</span>。主要8方向は 上・下・前・后・左・右・里・外。「近く」は <span class="zh">附近 fùjìn</span>、「向かい」は <span class="zh">对面 duìmiàn</span>。</p>
+
+<h3>聞き返し・お助けフレーズ10</h3>
+<table>
+<tr><td class="zh">请再说一遍。</td><td>もう一度言ってください</td></tr>
+<tr><td class="zh">请说慢一点。</td><td>ゆっくり話してください</td></tr>
+<tr><td class="zh">我听不懂。</td><td>聞き取れません</td></tr>
+<tr><td class="zh">这个用中文怎么说?</td><td>これは中国語で何と言いますか</td></tr>
+<tr><td class="zh">〜是什么意思?</td><td>〜はどういう意味ですか</td></tr>
+<tr><td class="zh">能不能发文字?</td><td>文字で送ってもらえますか</td></tr>
+<tr><td class="zh">你的意思是〜,对吗?</td><td>つまり〜ということですか</td></tr>
+<tr><td class="zh">请稍等。</td><td>少々お待ちください</td></tr>
+<tr><td class="zh">没问题。/ 收到。</td><td>問題ありません/受け取りました</td></tr>
+<tr><td class="zh">我在学汉语,说错了请告诉我。</td><td>中国語を勉強中です。間違えたら教えてください</td></tr>
+</table>
+
+<a class="totop" href="#top">↑ 目次へ</a>
+
+<footer>耳から中国語 ── 別冊テキスト|アプリとセットで使う学習ガイド<br>ブラウザの「印刷 → PDFとして保存」で、章ごとに改ページされたPDF版が作れます。</footer>
+
+</main>
+<script>if('serviceWorker' in navigator){window.addEventListener('load',function(){navigator.serviceWorker.register('./sw.js').catch(function(){})})}</script>
+</body>
+</html>
