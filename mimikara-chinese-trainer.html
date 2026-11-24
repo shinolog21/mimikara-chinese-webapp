@@ -763,10 +763,10 @@ function pickVoice(){
 if(hasTTS){pickVoice();speechSynthesis.onvoiceschanged=pickVoice;}
 else{document.getElementById('ttsBanner').style.display='block';}
 
-function speak(text,opt){
+function speakTTS(text,opt){
   opt=opt||{};
   if(!hasTTS){if(opt.onend)opt.onend();return;}
-  speechSynthesis.cancel();
+  stopVoice();
   setTimeout(function(){
     const u=new SpeechSynthesisUtterance(text);
     u.lang='zh-CN';
@@ -778,6 +778,26 @@ function speak(text,opt){
     speechSynthesis.speak(u);
   },60);
 }
+
+/* ============ 録音した声(2026-11-24・E の声。mini のローカル AI で前もって作った audio/zh/) ============
+   目録(audio/zh/index.json)にある文は録音を流し、無い文(会話の返事など)は今まで通り端末の声で読む。
+   速さは、録音そのままの速さを既定(0.85)に当てる(0.7 なら少しゆっくり・1.15 なら速め)。声の高さは変えない */
+let ZH_AUDIO=null,curAudio=null;
+fetch('./audio/zh/index.json').then(r=>r.ok?r.json():null).then(j=>{ZH_AUDIO=j;}).catch(()=>{});
+function stopVoice(){if(curAudio){try{curAudio.pause();}catch(e){}curAudio.onended=null;curAudio=null;}if(hasTTS)speechSynthesis.cancel();}
+function playRecorded(text,opt){
+  const k=ZH_AUDIO&&ZH_AUDIO[String(text).replace(/\n/g,' ').trim()];
+  if(!k)return false;
+  stopVoice();
+  const a=new Audio('./audio/zh/'+k+'.m4a');
+  a.preservesPitch=true;a.webkitPreservesPitch=true;
+  a.playbackRate=(opt.rate||RATE)/0.85;
+  if(opt.onend)a.onended=opt.onend;
+  curAudio=a;
+  a.play().catch(()=>{if(curAudio===a){curAudio=null;speakTTS(text,opt);}});
+  return true;
+}
+function speak(text,opt){opt=opt||{};if(playRecorded(text,opt))return;speakTTS(text,opt);}
 
 /* ============ 共通 ============ */
 function el(id){return document.getElementById(id)}
@@ -992,7 +1012,7 @@ function renderSaku(){
 let ld={idx:-1,show:{h:false,p:false,j:false},over:{},playToken:0};
 function stopSpeak(){
   ld.playToken++;
-  if(hasTTS)speechSynthesis.cancel();
+  stopVoice();
   highlight(-1);
 }
 function highlight(li){

@@ -414,7 +414,26 @@ let RATE=0.85,zhVoice=null,curU=null;
 const hasTTS=('speechSynthesis' in window)&&('SpeechSynthesisUtterance' in window);
 function pickVoice(){if(!hasTTS)return;const vs=speechSynthesis.getVoices();const zh=vs.filter(v=>v.lang&&v.lang.toLowerCase().replace('_','-').indexOf('zh')===0);zhVoice=zh.find(v=>/cn|hans|mandarin|普通|中文|台/i.test(v.lang+' '+v.name))||zh[0]||null;}
 if(hasTTS){pickVoice();speechSynthesis.onvoiceschanged=pickVoice;}
-function speak(t,opt){opt=opt||{};if(!hasTTS)return;speechSynthesis.cancel();setTimeout(()=>{const u=new SpeechSynthesisUtterance(t);u.lang='zh-CN';if(zhVoice)u.voice=zhVoice;u.rate=opt.rate||RATE;curU=u;speechSynthesis.speak(u);},60);}
+function speakTTS(t,opt){opt=opt||{};if(!hasTTS)return;stopVoice();setTimeout(()=>{const u=new SpeechSynthesisUtterance(t);u.lang='zh-CN';if(zhVoice)u.voice=zhVoice;u.rate=opt.rate||RATE;curU=u;speechSynthesis.speak(u);},60);}
+/* ============ 録音した声(2026-11-24・E の声。mini のローカル AI で前もって作った audio/zh/) ============
+   目録(audio/zh/index.json)にある文は録音を流し、無い文(会話の返事など)は今まで通り端末の声で読む。
+   速さは、録音そのままの速さを既定(0.85)に当てる(0.7 なら少しゆっくり・1.15 なら速め)。声の高さは変えない */
+let ZH_AUDIO=null,curAudio=null;
+fetch('./audio/zh/index.json').then(r=>r.ok?r.json():null).then(j=>{ZH_AUDIO=j;}).catch(()=>{});
+function stopVoice(){if(curAudio){try{curAudio.pause();}catch(e){}curAudio.onended=null;curAudio=null;}if(hasTTS)speechSynthesis.cancel();}
+function playRecorded(text,opt){
+  const k=ZH_AUDIO&&ZH_AUDIO[String(text).replace(/\n/g,' ').trim()];
+  if(!k)return false;
+  stopVoice();
+  const a=new Audio('./audio/zh/'+k+'.m4a');
+  a.preservesPitch=true;a.webkitPreservesPitch=true;
+  a.playbackRate=(opt.rate||RATE)/0.85;
+  if(opt.onend)a.onended=opt.onend;
+  curAudio=a;
+  a.play().catch(()=>{if(curAudio===a){curAudio=null;speakTTS(text,opt);}});
+  return true;
+}
+function speak(text,opt){opt=opt||{};if(playRecorded(text,opt))return;speakTTS(text,opt);}
 document.getElementById('rate').addEventListener('change',e=>{RATE=parseFloat(e.target.value);});
 
 /* ============ 保存アダプタ(Claude内→ブラウザ→一時の順) ============ */
@@ -672,7 +691,7 @@ function renderPron(){
   const seg=el('mainSeg');
   seg.addEventListener('click',e=>{
     const b=e.target.closest('button[data-p]');if(!b)return;
-    if(hasTTS)speechSynthesis.cancel();
+    stopVoice();
     seg.querySelectorAll('button').forEach(x=>x.classList.toggle('on',x===b));
     ['rev','manage','pron'].forEach(k=>{el('tab-'+k).style.display=(k===b.dataset.p)?'block':'none';});
   });

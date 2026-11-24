@@ -1,4 +1,4 @@
-const CACHE='mimikara-v1';
+const CACHE='mimikara-v2';  // 2026-11-24 録音した声(audio/zh/)を足した
 const ASSETS=['./','./index.html','./mimikara-chinese-trainer.html','./mimikara-chinese-textbook.html','./mimikara-word-dojo.html','./icon-192.png','./icon-512.png','./icon-180.png','./manifest.webmanifest'];
 self.addEventListener('install',e=>{
   e.waitUntil(caches.open(CACHE).then(c=>c.addAll(ASSETS)).then(()=>self.skipWaiting()));
